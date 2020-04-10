@@ -1,27 +1,34 @@
-# App
+Project:Customer Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This project is made to mange customer records of an organization.
 
-## Development server
+Software stack:
+Database : MongoDB
+Backend: Nodejs 12 ,expressjs
+Frontend:Angular 9
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+***********************************************************************************************************************************
+To run the project:
 
-## Code scaffolding
+1) Installation:-
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*go to https://www.mongodb.com/download-center 
+*download and install mongoDB community edition
+set bin directory to environment variable
+*go to api folder
+*execute npm i
+*go to app folder
+*execute npm i 
 
-## Build
+2)Execution
+ open a cmd and run mongod
+ open another cmd window and navigate to api folder
+ run npm start
+ open another cmd window and navigate to app folder
+ run npm start
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Developer:
+Frontend:Deepayan Kundu
+Backend:Deepayan Kundu
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Credits:Deepayan Kundu
