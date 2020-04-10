@@ -7,7 +7,7 @@ This project is made to ease the management of customer records in an organizati
 2) Backend: Nodejs 12 ,expressjs
 3) Frontend: Angular 9
 
-# Installation:-
+## Installation:
 
 1) Go to https://www.mongodb.com/download-center 
 2) Sign in, Download and install MongoDB community edition
@@ -17,7 +17,7 @@ This project is made to ease the management of customer records in an organizati
 6) Go to app folder
 7) Execute npm i 
 
-# Execution:-
+## Execution:
 
  1) Open a cmd and run mongod
  2) Open another cmd window and navigate to api folder
