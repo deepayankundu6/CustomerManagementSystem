@@ -5,7 +5,7 @@ This project is made to ease the management of customer records in an organizati
 ## Software stack:
 1) Database : MongoDB
 2) Backend: Nodejs 12 ,expressjs
-3) Frontend:Angular 9
+3) Frontend: Angular 9
 
 ## To run the project:
 
