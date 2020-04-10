@@ -3,8 +3,6 @@ var express = require('express');
 var path = require('path');
 const staticMiddleware = express.static("dist");
 var cookieParser = require('cookie-parser');
-var mongoDB = require('../api/mongoDB/controller');
-var customers = require('./Controller/customers');
 const PORT = 5000;
 var bodyParser = require('body-parser');
 const config = require('./webpack.config.js');
@@ -25,6 +23,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', router);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+var mongoDB = require('../api/mongoDB/controller');
+var customers = require('./Controller/customers');
+var states = require('./Controller/states');
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -52,7 +54,13 @@ app.use(function (err, req, res, next) {
 
 router.post('/customer/create', customers.createCustomer);
 router.get('/customer/getall', customers.fetchAllCustomer);
-router.get('/customer/get/:id', customers.fetchCustomer);
+router.post('/customer/get', customers.fetchCustomer);
+router.post('/customer/update', customers.modifyCustomer);
+router.post('/customer/delete', customers.deleteCustomer);
+
+router.get('/states/getdistrict/:state', states.getDistrict);
+router.get('/states/getstates', states.getStates);
+
 
 
 app.listen(PORT, () => {

@@ -27,4 +27,8 @@ export class AddCustomerComponent implements OnInit {
     console.log(this.customerDetails.value);
   }
 
+  getCities() {
+
+
+  }
 }
