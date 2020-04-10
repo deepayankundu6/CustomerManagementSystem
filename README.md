@@ -1,33 +1,35 @@
-# Project: Customer Management System
+## Project: Customer Management System
 
 This project is made to manage customer records of an organization.
 
-# Software stack:
+## Software stack:
 1) Database : MongoDB
 2) Backend: Nodejs 12 ,expressjs
 3) Frontend:Angular 9
 
-# To run the project:
+## To run the project:
 
-1) Installation:-
+# 1) Installation:-
 
-I) Go to https://www.mongodb.com/download-center 
-II) Download and install mongoDB community edition
-III) Set bin directory to environment variable
-IV) Go to api folder
-V) Execute npm i
-VI) Go to app folder
-VII) Execute npm i 
+1)) Go to https://www.mongodb.com/download-center 
+2)) Download and install mongoDB community edition
+3) Set bin directory to environment variable
+4) Go to api folder
+5) Execute npm i
+6) Go to app folder
+7) Execute npm i 
 
-2) Execution:-
- a) Open a cmd and run mongod
- b) Open another cmd window and navigate to api folder
- c) Run npm start
- d) Open another cmd window and navigate to app folder
- e) Run npm start
+# 2) Execution:-
 
-# Developer:
-Frontend: Deepayan Kundu
-Backend: Deepayan Kundu
+ 1) Open a cmd and run mongod
+ 2) Open another cmd window and navigate to api folder
+ 3) Run npm start
+ 4) Open another cmd window and navigate to app folder
+ 5) Run npm start
 
-# Credits: Deepayan Kundu
+## Developer:
+
+1) Frontend: Deepayan Kundu
+2) Backend: Deepayan Kundu
+
+## Credits: Deepayan Kundu
