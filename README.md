@@ -12,8 +12,8 @@ This project is made to manage customer records of an organization.
 # 1) Installation:-
 
 1) Go to https://www.mongodb.com/download-center 
-2) Sign In, Download and install mongoDB community edition
-3) Set bin directory to environment variable
+2) Sign in, Download and install MongoDB community edition
+3) Set MongoDB bin directory in windows environment variable
 4) Go to api folder
 5) Execute npm i
 6) Go to app folder
