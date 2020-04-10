@@ -51,6 +51,8 @@ app.use(function (err, req, res, next) {
 });
 
 router.post('/customer/create', customers.createCustomer);
+router.get('/customer/getall', customers.fetchAllCustomer);
+router.get('/customer/get/:id', customers.fetchCustomer);
 
 
 app.listen(PORT, () => {
