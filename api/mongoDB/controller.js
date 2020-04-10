@@ -75,7 +75,6 @@ exports.findOneDocument = async (query) => {
     return result;
 }
 
-
 exports.updateOneDocument = async (query, newValues) => {
     let result;
     let client;
@@ -91,7 +90,6 @@ exports.updateOneDocument = async (query, newValues) => {
     return result;
 }
 
-
 exports.deleteOneDocument = async (query) => {
     let result;
     let client;
@@ -105,7 +103,6 @@ exports.deleteOneDocument = async (query) => {
 
     return result;
 }
-
 
 exports.deleteManyDocuments = async (query) => {
     let result;
