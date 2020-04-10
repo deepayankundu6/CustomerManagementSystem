@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+const staticMiddleware = express.static("dist");
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoDB = require('../api/mongoDB/controller');
@@ -16,22 +17,15 @@ const webpackDevMiddleware = require('webpack-dev-middleware')(
   compiler,
   config.devServer
 )
-
 var app = express();
 var router = express.Router();
-
-
 app.use(webpackDevMiddleware);
-
-const staticMiddleware = express.static("dist");
-
 app.use(staticMiddleware);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', router);
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
