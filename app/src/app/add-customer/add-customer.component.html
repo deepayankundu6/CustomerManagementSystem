@@ -1,0 +1,46 @@
+<div>
+    <app-pagetitle></app-pagetitle>
+</div>
+
+<div class="input-group container">
+    <form [formGroup]="customerDetails">
+        <div class="input-group-prepend"> <label> FirstName: <input type="text" class="form-control"
+                    formControlName="FirstName"></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> LastName: <input type="text" class="form-control"
+                    formControlName="LastName"></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> Gender : <select class="custom-select" formControlName="Gender"
+                    id="inputGroupSelect02">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> Email: <input type="email" class="form-control"
+                    formControlName="Email"></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> Address:<textarea class="form-control" formControlName="Address">
+
+    </textarea></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> State:<input class="form-control" type="text"
+                    formControlName="City"></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> City: <input class="form-control" type="text"
+                    formControlName="State"></label>
+        </div>
+        <br><br>
+
+        <p>
+            <button class="btn btn-primary" (click)="updateProfile()">Create User</button>
+        </p>
+
+    </form>
+
+</div>
