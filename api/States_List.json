@@ -1,8 +1,5 @@
 [
     {
-        "_id": {
-            "$oid": "5e90368b62a9d66bf0c65959"
-        },
         "state": "Andhra Pradesh",
         "districts": [
             "Anantapur",
@@ -21,9 +18,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9036c57cc5776bf0ca8afa"
-        },
         "state": "Arunachal Pradesh",
         "districts": [
             "Tawang",
@@ -50,9 +44,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e90377b7cc5776bf0ca8afb"
-        },
         "state": "Assam",
         "districts": [
             "Baksa",
@@ -91,9 +82,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9037cb7cc5776bf0ca8afc"
-        },
         "state": "Bihar",
         "districts": [
             "Araria",
@@ -137,18 +125,12 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9037dc7cc5776bf0ca8afd"
-        },
         "state": "Chandigarh (UT)",
         "districts": [
             "Chandigarh"
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038047cc5776bf0ca8afe"
-        },
         "state": "Chhattisgarh",
         "districts": [
             "Balod",
@@ -181,18 +163,12 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038167cc5776bf0ca8aff"
-        },
         "state": "Dadra and Nagar Haveli (UT)",
         "districts": [
             "Dadra & Nagar Haveli"
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038227cc5776bf0ca8b00"
-        },
         "state": "Daman and Diu (UT)",
         "districts": [
             "Daman",
@@ -200,9 +176,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038347cc5776bf0ca8b01"
-        },
         "state": "Delhi (NCT)",
         "districts": [
             "Central Delhi",
@@ -219,9 +192,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038407cc5776bf0ca8b02"
-        },
         "state": "Goa",
         "districts": [
             "North Goa",
@@ -229,9 +199,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038567cc5776bf0ca8b03"
-        },
         "state": "Gujarat",
         "districts": [
             "Ahmedabad",
@@ -270,9 +237,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038777cc5776bf0ca8b04"
-        },
         "state": "Haryana",
         "districts": [
             "Ambala",
@@ -300,9 +264,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038827cc5776bf0ca8b05"
-        },
         "state": "Himachal Pradesh",
         "districts": [
             "Bilaspur",
@@ -320,9 +281,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e90388b7cc5776bf0ca8b06"
-        },
         "state": "Jammu and Kashmir",
         "districts": [
             "Anantnag",
@@ -350,9 +308,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e90389c7cc5776bf0ca8b07"
-        },
         "state": "Jharkhand",
         "districts": [
             "Bokaro",
@@ -382,9 +337,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038aa7cc5776bf0ca8b08"
-        },
         "state": "Karnataka",
         "districts": [
             "Bagalkot",
@@ -420,9 +372,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038b77cc5776bf0ca8b09"
-        },
         "state": "Kerala",
         "districts": [
             "Alappuzha",
@@ -442,9 +391,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038c27cc5776bf0ca8b0a"
-        },
         "state": "Lakshadweep (UT)",
         "districts": [
             "Agatti",
@@ -460,9 +406,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038d17cc5776bf0ca8b0b"
-        },
         "state": "Madhya Pradesh",
         "districts": [
             "Agar Malwa",
@@ -519,9 +462,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038e37cc5776bf0ca8b0c"
-        },
         "state": "Maharashtra",
         "districts": [
             "Ahmednagar",
@@ -563,9 +503,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9038fe7cc5776bf0ca8b0d"
-        },
         "state": "Manipur",
         "districts": [
             "Bishnupur",
@@ -587,9 +524,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e90390d7cc5776bf0ca8b0e"
-        },
         "state": "Meghalaya",
         "districts": [
             "East Garo Hills",
@@ -606,9 +540,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039197cc5776bf0ca8b0f"
-        },
         "state": "Mizoram",
         "districts": [
             "Aizawl",
@@ -622,9 +553,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039267cc5776bf0ca8b10"
-        },
         "state": "Nagaland",
         "districts": [
             "Dimapur",
@@ -641,9 +569,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039307cc5776bf0ca8b11"
-        },
         "state": "Odisha",
         "districts": [
             "Angul",
@@ -679,9 +604,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e90393e7cc5776bf0ca8b12"
-        },
         "state": "Puducherry (UT)",
         "districts": [
             "Karaikal",
@@ -691,9 +613,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039557cc5776bf0ca8b13"
-        },
         "state": "Punjab",
         "districts": [
             "Amritsar",
@@ -721,9 +640,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039617cc5776bf0ca8b14"
-        },
         "state": "Rajasthan",
         "districts": [
             "Ajmer",
@@ -762,9 +678,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e90396c7cc5776bf0ca8b15"
-        },
         "state": "Sikkim",
         "districts": [
             "East Sikkim",
@@ -774,9 +687,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039777cc5776bf0ca8b16"
-        },
         "state": "Tamil Nadu",
         "districts": [
             "Ariyalur",
@@ -814,9 +724,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e90399a7cc5776bf0ca8b17"
-        },
         "state": "Telangana",
         "districts": [
             "Adilabad",
@@ -853,9 +760,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039b37cc5776bf0ca8b18"
-        },
         "state": "Tripura",
         "districts": [
             "Dhalai",
@@ -869,9 +773,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039c07cc5776bf0ca8b19"
-        },
         "state": "Uttarakhand",
         "districts": [
             "Almora",
@@ -890,9 +791,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039cd7cc5776bf0ca8b1a"
-        },
         "state": "Uttar Pradesh",
         "districts": [
             "Agra",
@@ -973,9 +871,6 @@
         ]
     },
     {
-        "_id": {
-            "$oid": "5e9039dc7cc5776bf0ca8b1b"
-        },
         "state": "West Bengal",
         "districts": [
             "Alipurduar",
