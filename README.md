@@ -1,14 +1,14 @@
-#Project: Customer Management System
+# Project: Customer Management System
 
 This project is made to mange customer records of an organization.
 
-#Software stack:
+# Software stack:
 1) Database : MongoDB
 2) Backend: Nodejs 12 ,expressjs
 3) Frontend:Angular 9
 
 ***********************************************************************************************************************************
-#To run the project:
+# To run the project:
 
 1) Installation:-
 
@@ -27,8 +27,8 @@ set bin directory to environment variable
  *open another cmd window and navigate to app folder
  *run npm start
 
-#Developer:
+# Developer:
 *Frontend:Deepayan Kundu
 *Backend:Deepayan Kundu
 
-#Credits: Deepayan Kundu
+# Credits: Deepayan Kundu
