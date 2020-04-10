@@ -9,7 +9,7 @@ This project is made to ease the management of customer records in an organizati
 
 ## To run the project:
 
-# 1) Installation:-
+1) Installation:-
 
 1) Go to https://www.mongodb.com/download-center 
 2) Sign in, Download and install MongoDB community edition
@@ -19,7 +19,7 @@ This project is made to ease the management of customer records in an organizati
 6) Go to app folder
 7) Execute npm i 
 
-# 2) Execution:-
+2) Execution:-
 
  1) Open a cmd and run mongod
  2) Open another cmd window and navigate to api folder
