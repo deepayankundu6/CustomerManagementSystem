@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-customer',
@@ -8,8 +9,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AddCustomerComponent implements OnInit {
   customerDetails: FormGroup;
-
-  constructor() { }
+  districts: any;
+  states: any;
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.customerDetails = new FormGroup({
@@ -17,18 +19,31 @@ export class AddCustomerComponent implements OnInit {
       LastName: new FormControl(''),
       Email: new FormControl(''),
       Address: new FormControl(''),
-      City: new FormControl(''),
+      District: new FormControl(''),
       State: new FormControl(''),
       Gender: new FormControl('')
     }
     );
+    this.getStates();
   }
   updateProfile() {
     console.log(this.customerDetails.value);
   }
 
-  getCities() {
+  getDistricts(state) {
+    if (state) {
+      this.http.get("/api/states/getdistrict/" + state).subscribe(districts => {
+        this.districts = districts;
+      }, error => console.error(error));
+    } else {
+      console.log(state);
+    }
 
+  }
 
+  getStates() {
+    this.http.get("/api/states/getstates").subscribe(state => {
+      this.states = state;
+    }, error => console.error(error));
   }
 }

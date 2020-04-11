@@ -4,11 +4,11 @@
 
 <div class="input-group container">
     <form [formGroup]="customerDetails">
-        <div class="input-group-prepend"> <label> FirstName: <input type="text" class="form-control"
+        <div class="input-group-prepend"> <label> First Name: <input type="text" class="form-control"
                     formControlName="FirstName"></label>
         </div>
         <br>
-        <div class="input-group-prepend"> <label> LastName: <input type="text" class="form-control"
+        <div class="input-group-prepend"> <label> Last Name: <input type="text" class="form-control"
                     formControlName="LastName"></label>
         </div>
         <br>
@@ -28,12 +28,19 @@
     </textarea></label>
         </div>
         <br>
-        <div class="input-group-prepend"> <label> State:<input class="form-control" type="text"
-                    formControlName="State"></label>
+        <div class="input-group-prepend"> <label> State:<select ngModel (ngModelChange)="getDistricts($event)"
+                    class="form-control" formControlName="State">
+                    <option *ngFor="let state of states" [value]="state">{{state}}
+                    </option>
+                </select>
+            </label>
         </div>
         <br>
-        <div class="input-group-prepend"> <label> City: <input class="form-control" type="text"
-                    formControlName="City"></label>
+        <div class="input-group-prepend"> <label> District: <select class="form-control" formControlName="District">
+                    <option *ngFor="let district of districts" [value]="district">{{district}}
+                    </option>
+                </select>
+            </label>
         </div>
         <br><br>
 
