@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-add-customer',
@@ -12,7 +13,7 @@ export class AddCustomerComponent implements OnInit {
   customerDetails: FormGroup;
   districts: any;
   states: any;
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.customerDetails = new FormGroup({
@@ -35,15 +36,14 @@ export class AddCustomerComponent implements OnInit {
     this.getStates();
   }
   updateProfile() {
-    {
-      this.http.post("api/customer/create", this.customerDetails.value).subscribe((data) => {
-        console.log(data);
-        this.toastr.success("Success", "Customer added successfully");
-      }, error => {
-        this.toastr.error("Failure", "Failed to add customer")
-        console.error(error)
-      });
-    }
+    this.spinner.show();
+    this.http.post("api/customer/create", this.customerDetails.value).subscribe((data) => {
+      this.toastr.success("Success", "Customer added successfully");
+    }, error => {
+      this.toastr.error("Failure", "Failed to add customer")
+      console.error(error)
+    });
+    this.spinner.hide();
   }
 
   getDistricts(state) {
