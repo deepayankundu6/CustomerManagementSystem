@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-customer',
@@ -11,23 +12,38 @@ export class AddCustomerComponent implements OnInit {
   customerDetails: FormGroup;
   districts: any;
   states: any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.customerDetails = new FormGroup({
-      FirstName: new FormControl(''),
-      LastName: new FormControl(''),
-      Email: new FormControl(''),
-      Address: new FormControl(''),
-      District: new FormControl(''),
-      State: new FormControl(''),
-      Gender: new FormControl('')
+      FirstName: new FormControl('', [Validators.required,
+      Validators.minLength(1)]),
+      LastName: new FormControl('', [Validators.required,
+      Validators.minLength(1)]),
+      Email: new FormControl('', [Validators.required,
+      Validators.minLength(1)]),
+      Address: new FormControl('', [Validators.required,
+      Validators.minLength(1)]),
+      District: new FormControl('', [Validators.required,
+      Validators.minLength(1)]),
+      State: new FormControl('', [Validators.required,
+      Validators.minLength(1)]),
+      Gender: new FormControl('', [Validators.required,
+      Validators.minLength(1)])
     }
     );
     this.getStates();
   }
   updateProfile() {
-    console.log(this.customerDetails.value);
+    {
+      this.http.post("api/customer/create", this.customerDetails.value).subscribe((data) => {
+        console.log(data);
+        this.toastr.success("Success", "Customer added successfully");
+      }, error => {
+        this.toastr.error("Failure", "Failed to add customer")
+        console.error(error)
+      });
+    }
   }
 
   getDistricts(state) {

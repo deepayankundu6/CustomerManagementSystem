@@ -10,6 +10,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { EditcustomerdetailsComponent } from './editcustomerdetails/editcustomerdetails.component';
 import { PagetitleComponent } from './pagetitle/pagetitle.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -45,7 +45,10 @@
         <br><br>
 
         <p>
-            <button class="btn btn-primary" (click)="updateProfile()">Create User</button>
+            <button class="btn btn-danger" style=" margin-right: 10%;" routerLink=''> Back
+            </button>
+            <button class="btn btn-primary" [disabled]="!customerDetails.valid" (click)="updateProfile()">Create
+                User</button>
         </p>
 
     </form>
