@@ -51,10 +51,7 @@ export class AddCustomerComponent implements OnInit {
       this.http.get("/api/states/getdistrict/" + state).subscribe(districts => {
         this.districts = districts;
       }, error => console.error(error));
-    } else {
-      console.log(state);
     }
-
   }
 
   getStates() {
