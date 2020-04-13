@@ -15,9 +15,14 @@ export class CustomerViewComponent implements OnInit {
   ngOnInit(): void {
     this.getCustomers();
   }
+
   getCustomers() {
     this.http.get("/api/customer/getall").subscribe((customers: Icustomer) => {
-      this.customers = customers;
+      if (customers) {
+        this.customers = customers;
+      } else {
+        console.log("No data received");
+      }
     }, (error) => console.error(error));
   }
 }
