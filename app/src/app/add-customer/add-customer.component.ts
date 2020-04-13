@@ -22,7 +22,7 @@ export class AddCustomerComponent implements OnInit {
       LastName: new FormControl('', [Validators.required,
       Validators.minLength(1)]),
       Email: new FormControl('', [Validators.required,
-      Validators.minLength(1)]),
+      Validators.minLength(1), Validators.email]),
       Address: new FormControl('', [Validators.required,
       Validators.minLength(1)]),
       District: new FormControl('', [Validators.required,
