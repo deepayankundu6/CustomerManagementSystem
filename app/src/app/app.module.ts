@@ -13,6 +13,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { MatCardModule } from '@angular/material/card';
+import { CidFilterPipe } from './cid-filter.pipe';
+import { CnfDialogBoxComponent } from './cnf-dialog-box/cnf-dialog-box.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MatCardModule } from '@angular/material/card';
     AddCustomerComponent,
     PagenotfoundComponent,
     EditcustomerdetailsComponent,
-    PagetitleComponent
+    PagetitleComponent,
+    CidFilterPipe,
+    CnfDialogBoxComponent
   ],
   imports: [
     BrowserModule,
