@@ -8,5 +8,4 @@ export class CidFilterPipe implements PipeTransform {
   transform(value: unknown, ...args: unknown[]): unknown {
     return null;
   }
-
 }
