@@ -39,7 +39,7 @@ export class AddCustomerComponent implements OnInit {
     this.spinner.show();
     this.http.post("api/customer/create", this.customerDetails.value).subscribe((data) => {
       this.toastr.success("Success", "Customer added successfully");
-    }, error => {
+    }, (error) => {
       this.toastr.error("Failure", "Failed to add customer")
       console.error(error)
     });
@@ -48,15 +48,15 @@ export class AddCustomerComponent implements OnInit {
 
   getDistricts(state) {
     if (state) {
-      this.http.get("/api/states/getdistrict/" + state).subscribe(districts => {
+      this.http.get("/api/states/getdistrict/" + state).subscribe((districts) => {
         this.districts = districts;
-      }, error => console.error(error));
+      }, (error) => console.error(error));
     }
   }
 
   getStates() {
-    this.http.get("/api/states/getstates").subscribe(state => {
+    this.http.get("/api/states/getstates").subscribe((state) => {
       this.states = state;
-    }, error => console.error(error));
+    }, (error) => console.error(error));
   }
 }

@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-pagetitle',
   templateUrl: './pagetitle.component.html',
   styleUrls: ['./pagetitle.component.css']
 })
-export class PagetitleComponent implements OnInit {
+export class PagetitleComponent implements OnChanges {
+  time;
+  date;
+  constructor() {
+    setInterval(() => {
+      this.date = formatDate(Date(), 'dd-MMMM-yyyy', 'en-US', '+0530');
+      this.time = formatDate(Date(), ' hh:mm:ss a', 'en-US', '+0530');
+    }, 1);
 
-  constructor() { }
-
-  ngOnInit(): void {
   }
+  ngOnChanges(): void {
 
+  }
 }

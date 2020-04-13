@@ -1,4 +1,5 @@
 .display {
+    margin: 23em;
     color: White;
     font-size: 150%;
     font-weight: bolder;
@@ -8,4 +9,18 @@
 .background {
     height: 100%;
     background-color: blue;
+}
+
+.date {
+    margin: 1em;
+    color: White;
+    font-weight: bold;
+    text-align: left;
+}
+
+.time {
+    margin: 1em;
+    color: white;
+    font-weight: bold;
+    text-align: right;
 }
