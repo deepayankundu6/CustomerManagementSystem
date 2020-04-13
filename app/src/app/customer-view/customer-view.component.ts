@@ -9,6 +9,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class CustomerViewComponent implements OnInit {
   customers: Icustomer;
+  SearchCustomer: String;
   constructor(private http: HttpClient, private toastr: ToastrService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
