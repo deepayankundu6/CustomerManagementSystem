@@ -1,16 +1,63 @@
-.button {
-    color: white;
-    font-weight: bolder;
-    float: right;
-    margin-right: 5em;
-}
-
-.form-control {
-    max-width: 50em;
-    margin-left: 2em;
-    position: relative;
-}
-
-input {
-    float: left;
-}
+    .button {
+        color: white;
+        font-weight: bolder;
+        float: right;
+        margin-right: 5em;
+    }
+    
+    .form-control {
+        max-width: 50em;
+        margin-left: 2em;
+        position: relative;
+    }
+    
+    input {
+        float: left;
+    }
+    
+    .esclations {
+        color: red;
+        float: left;
+    }
+    
+    .appretiaitons {
+        color: green;
+        float: right;
+    }
+    
+    mat-card {
+        font-weight: bold;
+        background-color: whitesmoke;
+        border-radius: 5em;
+        border: 0 solid skyblue;
+        padding: 3em;
+        transition: transform .5s;
+    }
+    
+     :hover mat-card {
+        font-weight: bold;
+        background-color: whitesmoke;
+        border-radius: 5em;
+        border: 2px solid black;
+        box-shadow: grey;
+        text-shadow: black;
+        padding: 3em;
+        transform: scale(1.02);
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .email {
+        float: left;
+    }
+    
+    .gender {
+        float: right;
+    }
+    
+    .trash {
+        float: right;
+        margin-right: 1em;
+        cursor: pointer;
+    }

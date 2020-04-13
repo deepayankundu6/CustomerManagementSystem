@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
