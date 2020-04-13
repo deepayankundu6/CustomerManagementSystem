@@ -1,0 +1,11 @@
+.display {
+    color: White;
+    font-size: 150%;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.background {
+    height: 100%;
+    background-color: blue;
+}

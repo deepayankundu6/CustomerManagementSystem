@@ -3,7 +3,7 @@ var url = "mongodb://localhost:27017/MyDB";
 var DatabaseName = "MyDB";
 var CollectionName = "India"
 
-exports.getDistrict = async (req, res) => {
+exports.getDistrict = async(req, res) => {
     console.log("Inside getDistrict");
     let state = req.params.state;
 
@@ -15,7 +15,7 @@ exports.getDistrict = async (req, res) => {
     res.send(response[0].districts);
 }
 
-exports.getStates = async (req, res) => {
+exports.getStates = async(req, res) => {
     console.log("Inside getStates");
     let response = await findDocuments();
     let states = [];
@@ -25,29 +25,33 @@ exports.getStates = async (req, res) => {
     res.send(states);
 }
 
-findDocuments = async () => {
+findDocuments = async() => {
     let result;
     let client;
     try {
-        client = await MongoClient.connect(url);
+        client = await MongoClient.connect(url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
         db = client.db(DatabaseName);
         result = await db.collection(CollectionName).find({}).toArray();
-    }
-    catch (err) { console.error(err); } // catch any mongo error here
+    } catch (err) { console.error(err); } // catch any mongo error here
     finally { client.close(); } // make sure to close your connection after
 
     return result;
 }
 
-findOneDocument = async (query) => {
+findOneDocument = async(query) => {
     let result;
     let client;
     try {
-        client = await MongoClient.connect(url);
+        client = await MongoClient.connect(url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
         db = client.db(DatabaseName);
         result = await db.collection(CollectionName).find(query).toArray();
-    }
-    catch (err) { console.error(err); } // catch any mongo error here
+    } catch (err) { console.error(err); } // catch any mongo error here
     finally { client.close(); } // make sure to close your connection after
 
     return result;
@@ -57,12 +61,14 @@ createDatabase = () => {
     let response;
     let client;
     let MongoDBPromise = new Promise((resolve, reject) => {
-        resolve(client = MongoClient.connect(url)).then((db => {
+        resolve(client = MongoClient.connect(url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        })).then((db => {
             dbo.createCollection(CollectionName);
             console.log("Collection created!");
             db.close();
-        })
-        ).catch((err) => {
+        })).catch((err) => {
             console.log("There are some errors:", err);
         })
         reject(console.log("Unable to connect to the database!!!!"))
