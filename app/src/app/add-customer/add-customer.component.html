@@ -14,13 +14,15 @@
                 </select></label>
         </div>
         <br>
-        <div class="input-group-prepend"> <label> Address:<textarea class="form-control" formControlName="Address">
-
-            </textarea></label>
-        </div><br>
         <div class="input-group-prepend"> <label> Email: <input type="email" class="form-control"
                     style="min-width: 17em;" formControlName="Email"></label>
         </div>
+        <br>
+        <div class="input-group-prepend"> <label> Address:<textarea class="form-control" formControlName="Address">
+
+            </textarea></label>
+        </div>
+
         <br>
         <div class="input-group-prepend"> <label> State:<select ngModel (ngModelChange)="getDistricts($event)"
                     class="form-control" style="min-width: 17em;" formControlName="State">
@@ -40,9 +42,9 @@
         <br><br>
 
         <p>
-            <button class="btn btn-danger" style=" margin-right: 10%;" routerLink=''> Back
+            <button class="btn btn-danger" style="margin-right: 8%;  min-width: 8em;" routerLink=''> Back
             </button>
-            <button class="btn btn-primary" [disabled]="!customerDetails.valid" (click)="updateProfile()">Create
+            <button class="btn btn-primary" [disabled]="!customerDetails.valid" style=" min-width: 8em;" (click)="updateProfile()">Create
                 User</button>
         </p>
 
