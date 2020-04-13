@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from "ngx-spinner";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-customer',
@@ -13,7 +14,7 @@ export class AddCustomerComponent implements OnInit {
   customerDetails: FormGroup;
   districts: any;
   states: any;
-  constructor(private http: HttpClient, private toastr: ToastrService, private spinner: NgxSpinnerService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService, private spinner: NgxSpinnerService, private router: Router) { }
 
   ngOnInit(): void {
     this.customerDetails = new FormGroup({
@@ -39,6 +40,7 @@ export class AddCustomerComponent implements OnInit {
     this.spinner.show();
     this.http.post("api/customer/create", this.customerDetails.value).subscribe((data) => {
       this.toastr.success("Success", "Customer added successfully");
+      this.router.navigateByUrl('');
     }, (error) => {
       this.toastr.error("Failure", "Failed to add customer")
       console.error(error)
