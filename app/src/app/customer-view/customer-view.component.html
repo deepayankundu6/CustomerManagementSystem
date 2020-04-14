@@ -22,8 +22,11 @@
         <br>
 
         <mat-card-content>
-            <div class=" esclations ">Escalation: {{customer.Escalation}}</div>
-            <div class=" appretiaitons ">Appreciations: {{customer.Appreciations}} </div>
+            <div class=" esclations "><i class="far fa-thumbs-down"></i> {{customer.Escalation}}</div>
+            <div class=" comment ">
+                {{customer.Comments[0].Messasge}}
+            </div>
+            <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
         </mat-card-content>
     </mat-card>
     <br>

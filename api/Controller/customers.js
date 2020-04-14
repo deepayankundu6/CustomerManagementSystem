@@ -5,7 +5,15 @@ exports.createCustomer = async(req, res) => {
     let details = req.body;
     let cusotmerID = Math.floor(Math.random() * 1000000000);
     details.CustomerID = cusotmerID;
-    details.Comments = [];
+    var currentDate = new Date()
+    var day = currentDate.getDate()
+    var month = currentDate.getMonth() + 1
+    var year = currentDate.getFullYear()
+    today = day + '-' + month + '-' + year;
+    details.Comments = [{
+        "Message": "Customer added",
+        "Time": today
+    }];
     details.Escalation = 0;
     details.Appreciations = 0;
     let response = await MongoDB.insertOneDocument(details);
