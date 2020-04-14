@@ -58,11 +58,11 @@
     
     .trash {
         float: right;
-        margin-right: 1em;
         cursor: pointer;
     }
     
     .comment {
         font-weight: bold;
-        float: center;
+        margin-left: 36em;
+        color: cadetblue;
     }

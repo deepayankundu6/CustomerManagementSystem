@@ -3,14 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ICustomers } from "../icustomers";
+import { CidFilterPipe } from '../cid-filter.pipe';
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html',
   styleUrls: ['./customer-view.component.css']
 })
 export class CustomerViewComponent implements OnInit {
-  customers: ICustomers;
-  SearchCustomer: String;
+  customers: ICustomers[];
+  SearchCustomer: string;
   constructor(private http: HttpClient, private toastr: ToastrService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
@@ -19,7 +20,7 @@ export class CustomerViewComponent implements OnInit {
 
   getCustomers() {
     this.spinner.show();
-    this.http.get("/api/customer/getall").subscribe((customers: ICustomers) => {
+    this.http.get("/api/customer/getall").subscribe((customers: ICustomers[]) => {
       if (customers) {
         this.customers = customers;
       } else {
@@ -34,7 +35,6 @@ export class CustomerViewComponent implements OnInit {
     let payload = {
       "CustomerID": cid
     }
-    console.log("Delete:", payload);
     this.spinner.show();
     this.http.post("/api/customer/delete", payload).subscribe((resp) => {
       this.toastr.success("Success", "Customer removed successfully");

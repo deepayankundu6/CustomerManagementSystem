@@ -1,10 +1,10 @@
 <div class="container">
-    <input type="text" class="form-control" placeholder="Customer ID" [(ngModel)]="SearchCustomer">
+    <input type="number" class="form-control" placeholder="Customer ID" [(ngModel)]="SearchCustomer">
     <button routerLink='add' class="btn btn-primary button">Add
         Customer</button>
 </div>
 <br><br><br>
-<div class="container" *ngFor="let customer of customers">
+<div class="container" *ngFor="let customer of customers | cidFilter : SearchCustomer">
     <mat-card>
         <mat-card-title> {{customer.FirstName +' '+ customer.LastName + " ("+customer.CustomerID+") "}}
             <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="deleteCustomers(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
@@ -23,9 +23,6 @@
 
         <mat-card-content>
             <div class=" esclations "><i class="far fa-thumbs-down"></i> {{customer.Escalation}}</div>
-            <div class=" comment ">
-                {{customer.Comments[0].Messasge}}
-            </div>
             <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
         </mat-card-content>
     </mat-card>
