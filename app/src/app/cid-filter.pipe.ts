@@ -6,11 +6,11 @@ import { ICustomers } from './icustomers';
 })
 export class CidFilterPipe implements PipeTransform {
 
-  transform(values: ICustomers[], filter: string): ICustomers[] {
-    if (values && filter && values.length > 0) {
+  transform(values: ICustomers[], filter: Number): ICustomers[] {
+    if (values && filter && values.length > 0 && filter > 0) {
 
       values = values.filter((el: ICustomers) => {
-        if (el.CustomerID.toString().includes(filter))
+        if (el.CustomerID.toString().includes(filter.toString()))
           return values;
       }
       )

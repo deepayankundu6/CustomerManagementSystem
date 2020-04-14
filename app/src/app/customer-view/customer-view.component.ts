@@ -13,7 +13,7 @@ import { CnfDialogBoxComponent } from '../cnf-dialog-box/cnf-dialog-box.componen
 })
 export class CustomerViewComponent implements OnInit {
   customers: ICustomers[];
-  SearchCustomer: string;
+  SearchCustomer: Number;
   constructor(private http: HttpClient, private toastr: ToastrService,
     private spinner: NgxSpinnerService, private dialog: MatDialog) { }
 
