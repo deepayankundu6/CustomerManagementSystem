@@ -35,6 +35,7 @@
     }
     
      :hover mat-card {
+        cursor: pointer;
         font-weight: bold;
         background-color: #FFECDB;
         border-radius: 5em;
