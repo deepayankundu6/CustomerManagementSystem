@@ -40,12 +40,13 @@ export class AddCustomerComponent implements OnInit {
     this.spinner.show();
     this.http.post("api/customer/create", this.customerDetails.value).subscribe((data) => {
       this.toastr.success("Success", "Customer added successfully");
+      this.spinner.hide();
       this.router.navigateByUrl('');
     }, (error) => {
-      this.toastr.error("Failure", "Failed to add customer")
+      this.toastr.error("Failure", "Failed to add customer");
+      this.spinner.hide();
       console.error(error)
     });
-    this.spinner.hide();
   }
 
   getDistricts(state) {

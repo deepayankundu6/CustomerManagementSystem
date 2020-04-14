@@ -15,6 +15,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { MatCardModule } from '@angular/material/card';
 import { CidFilterPipe } from './cid-filter.pipe';
 import { CnfDialogBoxComponent } from './cnf-dialog-box/cnf-dialog-box.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -36,8 +37,8 @@ import { CnfDialogBoxComponent } from './cnf-dialog-box/cnf-dialog-box.component
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    ToastrModule.forRoot()
-
+    ToastrModule.forRoot(),
+    MatDialogModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

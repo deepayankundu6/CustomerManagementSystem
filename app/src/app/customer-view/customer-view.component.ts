@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ICustomers } from "../icustomers";
-import { CidFilterPipe } from '../cid-filter.pipe';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CnfDialogBoxComponent } from '../cnf-dialog-box/cnf-dialog-box.component';
+
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html',
@@ -12,14 +14,14 @@ import { CidFilterPipe } from '../cid-filter.pipe';
 export class CustomerViewComponent implements OnInit {
   customers: ICustomers[];
   SearchCustomer: string;
-  constructor(private http: HttpClient, private toastr: ToastrService, private spinner: NgxSpinnerService) { }
+  constructor(private http: HttpClient, private toastr: ToastrService,
+    private spinner: NgxSpinnerService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getCustomers();
   }
 
   getCustomers() {
-    this.spinner.show();
     this.http.get("/api/customer/getall").subscribe((customers: ICustomers[]) => {
       if (customers) {
         this.customers = customers;
@@ -29,21 +31,19 @@ export class CustomerViewComponent implements OnInit {
     }, (error) => {
       console.error(error);
     });
-    this.spinner.hide();
   }
-  deleteCustomers(cid) {
+
+  openCnfDialogue(cid): void {
     let payload = {
       "CustomerID": cid
     }
-    this.spinner.show();
-    this.http.post("/api/customer/delete", payload).subscribe((resp) => {
-      this.toastr.success("Success", "Customer removed successfully");
-    }, (error) => {
-      console.error(error);
-      this.toastr.error("Failure", "Failed to remove customer")
+    let dialogRef = this.dialog.open(CnfDialogBoxComponent, {
+      width: '30em',
+      height: '15em',
+      data: payload
+    })
+    dialogRef.afterClosed().subscribe((data) => {
+      this.getCustomers();
     });
-    this.getCustomers();
-    this.spinner.hide();
   }
-
 }
