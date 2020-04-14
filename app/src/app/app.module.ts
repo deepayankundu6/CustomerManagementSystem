@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CidFilterPipe } from './cid-filter.pipe';
 import { CnfDialogBoxComponent } from './cnf-dialog-box/cnf-dialog-box.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     EditcustomerdetailsComponent,
     PagetitleComponent,
     CidFilterPipe,
-    CnfDialogBoxComponent
+    CnfDialogBoxComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     BrowserModule,

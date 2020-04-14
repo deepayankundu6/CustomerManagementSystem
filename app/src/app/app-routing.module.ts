@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { EditcustomerdetailsComponent } from './editcustomerdetails/editcustomerdetails.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 
 
 const routes: Routes = [
   { path: '', component: CustomerViewComponent },
   { path: 'add', component: AddCustomerComponent },
-  { path: 'modify', component: EditcustomerdetailsComponent },
+  { path: 'view/:id', component: CustomerDetailsComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 
