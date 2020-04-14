@@ -1,5 +1,6 @@
 .container {
     padding: 2% 5% 5% 25%;
+    font-weight: bold;
 }
 
 select {
