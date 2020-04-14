@@ -9,7 +9,6 @@
         <mat-card-title> {{customer.FirstName +' '+ customer.LastName + " ("+customer.CustomerID+") "}}
             <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
         </mat-card-title>
-
         <mat-card-content>
             <div class=" email ">
                 Email: {{customer.Email}}
@@ -17,9 +16,7 @@
             <div class=" gender ">
                 Gender: {{customer.Gender}}
             </div>
-        </mat-card-content>
-        <br>
-        <mat-card-content>
+            <br>
             <div class=" esclations "><i class="far fa-thumbs-down"></i> {{customer.Escalation}}</div>
             <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
         </mat-card-content>

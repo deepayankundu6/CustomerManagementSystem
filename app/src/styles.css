@@ -2,4 +2,7 @@
 
 @import "../node_modules/ngx-toastr/toastr.css";
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import "~@angular/material/prebuilt-themes/indigo-pink.css"
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    background-color: #C9E6FF;
+}
