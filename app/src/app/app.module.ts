@@ -17,6 +17,8 @@ import { CidFilterPipe } from './cid-filter.pipe';
 import { CnfDialogBoxComponent } from './cnf-dialog-box/cnf-dialog-box.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { MatExpansionModule } from '@angular/material/expansion'
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
     BrowserAnimationsModule,
     NgxSpinnerModule,
     ToastrModule.forRoot(),
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule,
+    MatPaginatorModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

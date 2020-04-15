@@ -1,1 +1,65 @@
-<p>customer-details works!</p>
+<mat-accordion>
+    <mat-expansion-panel [expanded]=true hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <b> Name: </b> {{customer.FirstName +" " + customer.LastName}}
+            </mat-panel-title>
+            <mat-panel-description>
+                <b> Customer ID: </b> {{customer.CustomerID}}
+            </mat-panel-description>
+            <mat-panel-description>
+                <b> Email: </b> {{customer.Email}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div>
+            <table class="table">
+
+                <tbody>
+
+                    <tr>
+                        <th scope="row"> Address:</th>
+                        <td>{{customer.Address + " ," + customer.District + " ," + customer.State}}</td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row"> Gender:
+                        </th>
+                        <td>{{customer.Gender}}</td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row"> <i class="far fa-thumbs-down" style="color: red;"></i> Escalations Done:</th>
+                        <td>{{customer.Escalation}}</td>
+
+                    </tr>
+
+
+                    <tr>
+                        <th scope="row"> <i class="fas fa-thumbs-up" style="color: green;"></i> Appreciations Received:
+                        </th>
+                        <td>{{customer.Appreciations}}</td>
+
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Comments:
+                        </th>
+                        <td *ngFor="let comment of customer.Comments">{{comment.Message}}</td>
+                        <td *ngFor="let comment of customer.Comments">{{comment.Time}}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <mat-action-row>
+            <button type="button" class="btn btn-info" style="float: left; margin-right: 88em;" routerLink="">Back</button>
+            <button type="button" class="btn btn-warning" style="color: white; font-weight: bokd;">Edit</button>
+        </mat-action-row>
+
+    </mat-expansion-panel>
+
+</mat-accordion>

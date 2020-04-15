@@ -6,7 +6,7 @@
 <br><br><br>
 <div class="container" *ngFor="let customer of customers | cidFilter : SearchCustomer">
     <mat-card>
-        <mat-card-title routerLink='view/{{customer.CustomerID}}' class="title">
+        <mat-card-title class="title">
             {{customer.FirstName +' '+ customer.LastName}}
             <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
         </mat-card-title>
@@ -31,3 +31,6 @@
 <ngx-spinner bgColor="rgba(255,255,255,0.8)" size="2rem" color="#21e432" type="ball-scale-multiple">
     <p style="font-size: 20px; color: black">Loading...</p>
 </ngx-spinner>
+
+<!-- <mat-paginator class="pagination" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event">
+</mat-paginator> -->

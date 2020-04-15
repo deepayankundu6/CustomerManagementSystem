@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ICustomers } from "../icustomers";
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { CnfDialogBoxComponent } from '../cnf-dialog-box/cnf-dialog-box.component';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-customer-view',
@@ -14,6 +15,14 @@ import { CnfDialogBoxComponent } from '../cnf-dialog-box/cnf-dialog-box.componen
 export class CustomerViewComponent implements OnInit {
   customers: ICustomers[];
   SearchCustomer: Number;
+  // MatPaginator Inputs
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  pageEvent: PageEvent;
+  data: ICustomers[];
   constructor(private http: HttpClient, private toastr: ToastrService,
     private spinner: NgxSpinnerService, private dialog: MatDialog) { }
 
@@ -45,5 +54,12 @@ export class CustomerViewComponent implements OnInit {
     dialogRef.afterClosed().subscribe((data) => {
       this.getCustomers();
     });
+  }
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+      console.log(this.pageSizeOptions);
+    }
   }
 }

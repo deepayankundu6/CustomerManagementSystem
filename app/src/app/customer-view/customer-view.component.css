@@ -72,3 +72,11 @@
     .title {
         cursor: pointer;
     }
+    
+    .pagination {
+        position: absolute;
+        bottom: 1em;
+        float: center;
+        background-color: #C9E6FF;
+        font-weight: bold;
+    }
