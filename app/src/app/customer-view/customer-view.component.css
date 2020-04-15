@@ -18,32 +18,33 @@
     .esclations {
         color: red;
         float: left;
+        margin-left: 1em;
     }
     
     .appretiaitons {
         color: green;
         float: right;
+        margin-right: 1em;
     }
     
     mat-card {
         font-weight: bold;
         background-color: #FFECDB;
-        border-radius: 5em;
+        border-radius: 1em;
         border: 0 solid skyblue;
         padding: 2.5em;
         transition: transform .5s;
     }
     
      :hover mat-card {
-        cursor: pointer;
         font-weight: bold;
         background-color: #FFECDB;
-        border-radius: 5em;
+        border-radius: 1em;
         border: 2px solid black;
         box-shadow: grey;
         text-shadow: black;
         padding: 2.5em;
-        transform: scale(1.02);
+        transform: scale(1.01);
         -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
@@ -66,4 +67,8 @@
         font-weight: bold;
         margin-left: 36em;
         color: cadetblue;
+    }
+    
+    mat-card-title mat-card-subtitle {
+        cursor: pointer;
     }
