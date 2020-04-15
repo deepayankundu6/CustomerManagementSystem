@@ -4,30 +4,69 @@
         Customer</button>
 </div>
 <br><br><br>
-<div class="container" *ngFor="let customer of customers | cidFilter : SearchCustomer">
-    <mat-card>
-        <mat-card-title class="title">
-            {{customer.FirstName +' '+ customer.LastName}}
-            <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
-        </mat-card-title>
-        <mat-card-subtitle routerLink='view/{{customer.CustomerID}}' class="title"> {{customer.CustomerID}}
-        </mat-card-subtitle>
-        <mat-card-content>
-            <div class=" email ">
-                Email: {{customer.Email}}
-            </div>
-            <div class=" gender ">
-                Gender: {{customer.Gender}}
-            </div>
-        </mat-card-content>
-        <br>
-        <mat-card-footer>
-            <div class=" esclations "><i class="far fa-thumbs-down"></i> {{customer.Escalation}}</div>
-            <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
-        </mat-card-footer>
-    </mat-card>
+
+<mat-tab-group>
     <br>
-</div>
+    <mat-tab label="Cards View">
+        <br>
+        <div class="container" *ngFor="let customer of customers | cidFilter : SearchCustomer">
+            <mat-card>
+                <mat-card-title class="title">
+                    {{customer.FirstName +' '+ customer.LastName}}
+                    <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
+                </mat-card-title>
+                <mat-card-subtitle routerLink='view/{{customer.CustomerID}}' class="title"> {{customer.CustomerID}}
+                </mat-card-subtitle>
+                <mat-card-content>
+                    <div class=" email ">
+                        Email: {{customer.Email}}
+                    </div>
+                    <div class=" gender ">
+                        Gender: {{customer.Gender}}
+                    </div>
+                </mat-card-content>
+                <br>
+                <mat-card-footer>
+                    <div class=" esclations "><i class="far fa-thumbs-down"></i> {{customer.Escalation}}</div>
+                    <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
+                </mat-card-footer>
+            </mat-card>
+            <br>
+        </div>
+    </mat-tab>
+    <mat-tab label="Accordian View">
+        <br>
+        <div class="accordian">
+            <mat-accordion *ngFor="let customer of customers | cidFilter : SearchCustomer">
+                <mat-expansion-panel [expanded]=false>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title style="font-weight: bold;">
+                            {{customer.FirstName +" " + customer.LastName}}
+                        </mat-panel-title>
+                        <mat-panel-description routerLink='view/{{customer.CustomerID}}'>
+                            {{customer.CustomerID}}
+                        </mat-panel-description>
+                        <mat-panel-description>
+                            <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <div class=" email ">
+                        Email: {{customer.Email}}
+                    </div>
+                    <div class=" gender ">
+                        Gender: {{customer.Gender}}
+                    </div>
+                    <br>
+                    <div class=" esclations "><i class="far fa-thumbs-down"></i> {{customer.Escalation}}</div>
+                    <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
 <ngx-spinner bgColor="rgba(255,255,255,0.8)" size="2rem" color="#21e432" type="ball-scale-multiple">
     <p style="font-size: 20px; color: black">Loading...</p>
 </ngx-spinner>

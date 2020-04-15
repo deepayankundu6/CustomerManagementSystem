@@ -9,7 +9,7 @@ exports.createCustomer = async(req, res) => {
     var day = currentDate.getDate()
     var month = currentDate.getMonth() + 1
     var year = currentDate.getFullYear()
-    today = day + '-' + month + '-' + year;
+    today = day + ' - ' + month + ' - ' + year;
     details.Comments = [{
         "Message": "Customer added",
         "Time": today

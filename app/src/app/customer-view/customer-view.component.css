@@ -52,10 +52,12 @@
     
     .email {
         float: left;
+        font-weight: bold;
     }
     
     .gender {
         float: right;
+        font-weight: bold;
     }
     
     .trash {
@@ -79,4 +81,9 @@
         float: center;
         background-color: #C9E6FF;
         font-weight: bold;
+    }
+    
+    .accordian {
+        margin-left: 14em;
+        margin-right: 12em;
     }

@@ -19,7 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatTabsModule } from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ToastrModule.forRoot(),
     MatDialogModule,
     MatExpansionModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTabsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
