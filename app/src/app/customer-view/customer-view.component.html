@@ -7,7 +7,7 @@
 
 <mat-tab-group>
     <br>
-    <mat-tab label="Cards View">
+    <mat-tab label="Card View">
         <br>
         <div class="container" *ngFor="let customer of customers | cidFilter : SearchCustomer">
             <mat-card>
@@ -62,6 +62,7 @@
                     <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
 
                 </mat-expansion-panel>
+                <br>
             </mat-accordion>
         </div>
     </mat-tab>
