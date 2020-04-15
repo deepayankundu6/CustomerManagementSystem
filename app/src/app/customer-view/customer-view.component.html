@@ -6,10 +6,12 @@
 <br><br><br>
 <div class="container" *ngFor="let customer of customers | cidFilter : SearchCustomer">
     <mat-card>
-        <mat-card-title> {{customer.FirstName +' '+ customer.LastName}}
+        <mat-card-title routerLink='view/{{customer.CustomerID}}' class="title">
+            {{customer.FirstName +' '+ customer.LastName}}
             <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
         </mat-card-title>
-        <mat-card-subtitle> {{customer.CustomerID}} </mat-card-subtitle>
+        <mat-card-subtitle routerLink='view/{{customer.CustomerID}}' class="title"> {{customer.CustomerID}}
+        </mat-card-subtitle>
         <mat-card-content>
             <div class=" email ">
                 Email: {{customer.Email}}
