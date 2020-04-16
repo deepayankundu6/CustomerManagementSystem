@@ -5,10 +5,10 @@ exports.createCustomer = async(req, res) => {
     let details = req.body;
     let cusotmerID = Math.floor(Math.random() * 1000000000);
     details.CustomerID = cusotmerID;
-    var currentDate = new Date()
-    var day = currentDate.getDate()
-    var month = currentDate.getMonth() + 1
-    var year = currentDate.getFullYear()
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
     today = day + ' - ' + month + ' - ' + year;
     details.Comments = [{
         "Message": "Customer added",
