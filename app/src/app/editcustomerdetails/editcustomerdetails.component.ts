@@ -44,8 +44,6 @@ export class EditcustomerdetailsComponent implements OnInit {
       Comments: new FormControl("")
     }
     );
-
-    this.getStates();
   }
 
   onSubmitClick() {
@@ -95,28 +93,6 @@ export class EditcustomerdetailsComponent implements OnInit {
       this.toastr.error("Failure", "Failed to update customer");
       console.error(error)
     });
-  }
-
-  getDistricts(state) {
-    if (state) {
-      this.http.get("/api/states/getdistrict/" + state).subscribe((districts) => {
-        if (districts) {
-          this.districts = districts;
-        } else {
-          console.log("No data received");
-        }
-      }, (error) => console.error(error));
-    }
-  }
-
-  getStates() {
-    this.http.get("/api/states/getstates").subscribe((state) => {
-      if (state) {
-        this.states = state;
-      } else {
-        console.log("No data received");
-      }
-    }, (error) => console.error(error));
   }
 }
 

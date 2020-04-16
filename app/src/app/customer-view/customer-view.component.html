@@ -1,5 +1,5 @@
 <div class="container" style="
-    position: fixed;">
+    position: absolute;">
     <input type="number" class="form-control" placeholder="Customer ID" [(ngModel)]="SearchCustomer">
     <button routerLink='add' class="btn btn-primary button">Add
         Customer</button>
@@ -27,7 +27,7 @@
                 </mat-card-content>
                 <br>
                 <mat-card-footer>
-                    <div class=" esclations "><i class="far fa-thumbs-down"></i> {{customer.Escalation}}</div>
+                    <div class=" esclations "><i class="fas fa-thumbs-down"></i> {{customer.Escalation}}</div>
                     <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
                 </mat-card-footer>
             </mat-card>
@@ -43,7 +43,7 @@
                         <mat-panel-title style="font-weight: bold;">
                             {{customer.FirstName +" " + customer.LastName}}
                         </mat-panel-title>
-                        <mat-panel-description style="position: fixed; margin-left: 25em;" routerLink='view/{{customer.CustomerID}}'>
+                        <mat-panel-description style="position: absolute; margin-left: 25em;" routerLink='view/{{customer.CustomerID}}'>
                             {{customer.CustomerID}}
                         </mat-panel-description>
                         <mat-panel-description>
@@ -58,7 +58,7 @@
                         Gender: {{customer.Gender}}
                     </div>
                     <br>
-                    <div class="esclations"><i class="far fa-thumbs-down"></i> {{customer.Escalation}}</div>
+                    <div class="esclations"><i class="fas fa-thumbs-down"></i> {{customer.Escalation}}</div>
                     <div class="appretiaitons"><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
 
                 </mat-expansion-panel>

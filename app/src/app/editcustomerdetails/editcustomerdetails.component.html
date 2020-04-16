@@ -27,16 +27,9 @@
                         </textarea></label>
 
                 <label style="margin-left:25em;">
-                    State:<select ngModel (ngModelChange)="getDistricts($event)" class="form-control"
-                        style="min-width: 17em;" formControlName="State">
-                        <option *ngFor="let state of states" [value]="state">{{state}}
-                        </option>
-                    </select>
-                    District: <select class="form-control" formControlName="District"
-                        style="min-width: 17em; max-width: 17em;">
-                        <option *ngFor="let district of districts" [value]="district">{{district}}
-                        </option>
-                    </select>
+                    State: <input type="text" class="form-control" style="min-width: 17em;" formControlName="State">
+                    District:<input type="text" class="form-control" style="min-width: 17em;"
+                        formControlName="District">
                 </label>
             </div>
         </form>
@@ -54,35 +47,16 @@
                         style="min-width: 20em;" class="form-control" formControlName="Escalation"></label>
                 <label style="float: right; font-weight: bold;"> Appreciations Received:<input type="number"
                         style="min-width: 20em;" class="form-control" formControlName="Appreciations"></label>
+                <label style="float: left; font-weight: bold; margin-top: 2em;">
+                    Comment:<textarea style="min-width: 70em;" class="form-control"
+                        formControlName="Comments"></textarea>
+                </label>
             </div>
         </form>
         <br><br><br><br><br><br><br><br><br><br><br><br>
         <div>
             <button type="button" class="btn btn-info" style="float: left;" matStepperPrevious>Back</button>
-            <button type="button" class="btn btn-primary" style="float: right;" matStepperNext>Next</button>
-        </div>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel><b>Comments</b></ng-template>
-        <form [formGroup]="updateDetails">
-            <div class="input-group-prepend" style=" font-weight: bold;"> <label>
-                    <br>
-                    Comments:<br><textarea style="min-width: 70em;" class="form-control" formControlName="Comments">
-
-                        </textarea></label>
-            </div>
-            <br><br><br><br><br><br><br><br>
-        </form>
-
-
-        <div>
-            <button type="button" class="btn btn-info" style="float: left;" matStepperPrevious>Back</button>
             <button type="button" class="btn btn-success" [disabled]="!updateDetails.valid" style="float: right;" (click)="onSubmitClick()">Submit</button>
         </div>
-
     </mat-step>
-
-
-
-
 </mat-horizontal-stepper>
