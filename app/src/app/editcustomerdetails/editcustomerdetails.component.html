@@ -1,0 +1,46 @@
+<mat-horizontal-stepper [linear]="false" #stepper>
+
+    <mat-step>
+
+        <ng-template matStepLabel><b>Basic Details</b></ng-template>
+        Basic Details
+
+
+        <div>
+            <button type="button" class="btn btn-primary" style="float: right;" matStepperNext>Next</button>
+            <button type="button" class="btn btn-danger" style="float: left;" matStepperNext (click)="onCancel()">Exit</button>
+        </div>
+
+    </mat-step>
+
+
+    <mat-step>
+
+        <ng-template matStepLabel><b>Advanced Details</b></ng-template>
+        Advanced Details
+
+
+        <div>
+            <button type="button" class="btn btn-info" style="float: left;" matStepperPrevious>Back</button>
+            <button type="button" class="btn btn-primary" style="float: right;" matStepperNext>Next</button>
+        </div>
+
+    </mat-step>
+
+    <mat-step>
+
+        <ng-template matStepLabel><b>Comments</b></ng-template>
+        Comments
+
+
+        <div>
+            <button type="button" class="btn btn-info" style="float: left;" matStepperPrevious>Back</button>
+            <button type="button" class="btn btn-success" style="float: right;" (click)="onSubmitClick()">Submit</button>
+        </div>
+
+    </mat-step>
+
+
+
+
+</mat-horizontal-stepper>
