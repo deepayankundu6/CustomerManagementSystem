@@ -2,7 +2,6 @@
         color: white;
         font-weight: bolder;
         float: right;
-        margin-right: 5em;
     }
     
     .form-control {
@@ -27,24 +26,23 @@
         margin-right: 1em;
     }
     
-    mat-card {
+    .card {
         font-weight: bold;
-        background-color: #FFECDB;
+        background-color: white;
         border-radius: 1em;
         border: 0 solid skyblue;
         padding: 2.5em;
         transition: transform .5s;
     }
     
-     :hover mat-card {
+     :hover .card {
         font-weight: bold;
-        background-color: #FFECDB;
+        background-color: white;
         border-radius: 1em;
-        border: 2px solid black;
+        border: none;
         box-shadow: grey;
         text-shadow: black;
         padding: 2.5em;
-        transform: scale(1.01);
         -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);

@@ -20,6 +20,7 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatStepperModule } from '@angular/material/stepper'
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatDialogModule,
     MatExpansionModule,
     MatPaginatorModule,
-    MatTabsModule
+    MatTabsModule,
+    MatStepperModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

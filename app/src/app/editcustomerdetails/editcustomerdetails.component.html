@@ -1,0 +1,62 @@
+<mat-horizontal-stepper [linear]="false" #stepper>
+
+    <mat-step>
+
+        <ng-template matStepLabel><b>Basic Details</b></ng-template>
+
+        <form [formGroup]="updateDetails" style="font-weight: bold;">
+
+            <div class="input-group-prepend"> <label style="float: left;"> First Name: <input type="text"
+                        class="form-control" style="min-width: 17em;" formControlName="FirstName"></label>
+                <label style="float: right; margin-left: 25em;"> Last Name: <input type="text" class="form-control"
+                        style="min-width: 17em;" formControlName="LastName">
+                </label>
+            </div>
+            <br>
+            <div class="input-group-prepend"> <label style="float: left;"> Gender : <select class="form-control"
+                        formControlName="Gender" style="min-width: 17em;">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select></label>
+                <label style="float: right; margin-left: 25em;"> Email: <input type="email" class="form-control"
+                        style="min-width: 17em;" formControlName="Email"></label>
+            </div>
+            <br>
+            <div class="input-group-prepend"> <label style="float: left;"> Address:<textarea class="form-control"
+                        formControlName="Address" style="min-width: 17em;">
+                        </textarea></label>
+
+                <label style="margin-left:25em;">
+                    State: <input type="text" class="form-control" style="min-width: 17em;" formControlName="State">
+                    District:<input type="text" class="form-control" style="min-width: 17em;"
+                        formControlName="District">
+                </label>
+            </div>
+        </form>
+        <div>
+            <button type="button" class="btn btn-primary" style="float: right;" matStepperNext>Next</button>
+            <button type="button" class="btn btn-danger" style="float: left;" matStepperNext (click)="onCancel()">Exit</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel><b>Advanced Details</b></ng-template>
+        <form [formGroup]="updateDetails">
+            <div>
+                <br>
+                <label style="float: left;font-weight: bold;"> Escalations Done:<input type="number"
+                        style="min-width: 20em;" class="form-control" formControlName="Escalation"></label>
+                <label style="float: right; font-weight: bold;"> Appreciations Received:<input type="number"
+                        style="min-width: 20em;" class="form-control" formControlName="Appreciations"></label>
+                <label style="float: left; font-weight: bold; margin-top: 2em;">
+                    Comment:<textarea style="min-width: 70em;" class="form-control"
+                        formControlName="Comments"></textarea>
+                </label>
+            </div>
+        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div>
+            <button type="button" class="btn btn-info" style="float: left;" matStepperPrevious>Back</button>
+            <button type="button" class="btn btn-success" [disabled]="!updateDetails.valid" style="float: right;" (click)="onSubmitClick()">Submit</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

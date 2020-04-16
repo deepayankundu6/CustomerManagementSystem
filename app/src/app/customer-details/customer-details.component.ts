@@ -4,8 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ICustomers } from "../icustomers";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CnfDialogBoxComponent } from '../cnf-dialog-box/cnf-dialog-box.component';
 import { ActivatedRoute } from '@angular/router';
+import { EditcustomerdetailsComponent } from '../editcustomerdetails/editcustomerdetails.component';
 
 @Component({
   selector: 'app-customer-details',
@@ -35,5 +35,15 @@ export class CustomerDetailsComponent implements OnInit {
     }, (error) => {
       console.error(error);
     });
+  }
+  onEditClick() {
+    let dialogReff = this.dialog.open(EditcustomerdetailsComponent, {
+      height: "90em",
+      width: "90em",
+      data: this.customer
+    });
+    dialogReff.afterClosed().subscribe(() => {
+      this.getCustomer();
+    })
   }
 }

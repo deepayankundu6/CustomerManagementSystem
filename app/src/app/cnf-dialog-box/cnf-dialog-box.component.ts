@@ -10,10 +10,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./cnf-dialog-box.component.css']
 })
 export class CnfDialogBoxComponent implements OnInit {
-
   constructor(private http: HttpClient, private toastr: ToastrService,
     private spinner: NgxSpinnerService, public dialogRef: MatDialogRef<CnfDialogBoxComponent>,
-    @Inject(MAT_DIALOG_DATA) public data) { }
+    @Inject(MAT_DIALOG_DATA) public data
+  ) { }
 
   ngOnInit(): void {
   }
