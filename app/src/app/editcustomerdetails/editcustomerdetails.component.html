@@ -3,7 +3,11 @@
     <mat-step>
 
         <ng-template matStepLabel><b>Basic Details</b></ng-template>
-        Basic Details
+
+        <form [formGroup]="updateDetails">
+
+
+        </form>
 
 
         <div>
@@ -17,9 +21,17 @@
     <mat-step>
 
         <ng-template matStepLabel><b>Advanced Details</b></ng-template>
-        Advanced Details
 
-
+        <form [formGroup]="updateDetails">
+            <div>
+                <br>
+                <label style="float: left;font-weight: bold;"> Escalations:<input type="number" style="min-width: 20em;"
+                        class="form-control" formControlName="Escalations"></label>
+                <label style="float: right; font-weight: bold;"> Appreciations:<input type="number"
+                        style="min-width: 20em;" class="form-control" formControlName="Appreciations"></label>
+            </div>
+        </form>
+        <br><br><br><br><br><br><br>
         <div>
             <button type="button" class="btn btn-info" style="float: left;" matStepperPrevious>Back</button>
             <button type="button" class="btn btn-primary" style="float: right;" matStepperNext>Next</button>
@@ -30,7 +42,15 @@
     <mat-step>
 
         <ng-template matStepLabel><b>Comments</b></ng-template>
-        Comments
+        <form [formGroup]="updateDetails">
+            <div class="input-group-prepend" style=" font-weight: bold;"> <label>
+                    <br>
+                    Comments:<br><textarea style="min-width: 70em;" class="form-control" formControlName="Comments">
+
+                        </textarea></label>
+            </div>
+            <br><br><br>
+        </form>
 
 
         <div>
