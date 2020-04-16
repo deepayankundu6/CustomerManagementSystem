@@ -42,18 +42,14 @@
             </label>
         </div>
         <br><br>
-
         <p>
             <button class="btn btn-info" style="margin-right: 4%;  min-width: 8em;" routerLink=''> Back
             </button>
             <button class="btn btn-primary" [disabled]="!customerDetails.valid" style=" min-width: 8em;" (click)="updateProfile()">Create
                 User</button>
         </p>
-
     </form>
-
 </div>
-
 <ngx-spinner bgColor="rgba(255,255,255,0.8)" size="2rem" color="#21e432" type="ball-scale-multiple">
     <p style="font-size: 20px; color: black">Loading...</p>
 </ngx-spinner>

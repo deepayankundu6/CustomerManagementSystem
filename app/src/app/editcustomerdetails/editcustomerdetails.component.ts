@@ -14,6 +14,8 @@ import { ICustomers } from '../icustomers';
 })
 export class EditcustomerdetailsComponent implements OnInit {
   updateDetails: FormGroup;
+  districts: Object;
+  states: Object;
   constructor(private http: HttpClient, private toastr: ToastrService,
     private spinner: NgxSpinnerService, private dialogRef: MatDialogRef<EditcustomerdetailsComponent>,
     private activatedRoute: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public customer: ICustomers
@@ -35,13 +37,15 @@ export class EditcustomerdetailsComponent implements OnInit {
       Validators.minLength(1)]),
       Gender: new FormControl(this.customer.Gender, [Validators.required,
       Validators.minLength(1)]),
-      Escalations: new FormControl(this.customer.Escalation, [Validators.required,
+      Escalation: new FormControl(this.customer.Escalation, [Validators.required,
       Validators.minLength(1)]),
       Appreciations: new FormControl(this.customer.Appreciations, [Validators.required,
       Validators.minLength(1)]),
       Comments: new FormControl("")
     }
     );
+
+    this.getStates();
   }
 
   onSubmitClick() {
@@ -64,7 +68,7 @@ export class EditcustomerdetailsComponent implements OnInit {
       "State": this.updateDetails.value.State,
       "Comments": this.customer.Comments,
       "Gender": this.updateDetails.value.Gender,
-      "Escalations": this.updateDetails.value.Escalations,
+      "Escalation": this.updateDetails.value.Escalation,
       "Appreciations": this.updateDetails.value.Appreciations,
       "CustomerID": this.customer.CustomerID
     }
@@ -92,6 +96,29 @@ export class EditcustomerdetailsComponent implements OnInit {
       console.error(error)
     });
   }
+
+  getDistricts(state) {
+    if (state) {
+      this.http.get("/api/states/getdistrict/" + state).subscribe((districts) => {
+        if (districts) {
+          this.districts = districts;
+        } else {
+          console.log("No data received");
+        }
+      }, (error) => console.error(error));
+    }
+  }
+
+  getStates() {
+    this.http.get("/api/states/getstates").subscribe((state) => {
+      if (state) {
+        this.states = state;
+      } else {
+        console.log("No data received");
+      }
+    }, (error) => console.error(error));
+  }
 }
+
 
 

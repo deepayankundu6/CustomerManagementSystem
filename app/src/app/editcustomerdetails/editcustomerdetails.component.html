@@ -4,43 +4,65 @@
 
         <ng-template matStepLabel><b>Basic Details</b></ng-template>
 
-        <form [formGroup]="updateDetails">
+        <form [formGroup]="updateDetails" style="font-weight: bold;">
 
+            <div class="input-group-prepend"> <label style="float: left;"> First Name: <input type="text"
+                        class="form-control" style="min-width: 17em;" formControlName="FirstName"></label>
+                <label style="float: right; margin-left: 25em;"> Last Name: <input type="text" class="form-control"
+                        style="min-width: 17em;" formControlName="LastName">
+                </label>
+            </div>
+            <br>
+            <div class="input-group-prepend"> <label style="float: left;"> Gender : <select class="form-control"
+                        formControlName="Gender" style="min-width: 17em;">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select></label>
+                <label style="float: right; margin-left: 25em;"> Email: <input type="email" class="form-control"
+                        style="min-width: 17em;" formControlName="Email"></label>
+            </div>
+            <br>
+            <div class="input-group-prepend"> <label style="float: left;"> Address:<textarea class="form-control"
+                        formControlName="Address" style="min-width: 17em;">
+                        </textarea></label>
 
+                <label style="margin-left:25em;">
+                    State:<select ngModel (ngModelChange)="getDistricts($event)" class="form-control"
+                        style="min-width: 17em;" formControlName="State">
+                        <option *ngFor="let state of states" [value]="state">{{state}}
+                        </option>
+                    </select>
+                    District: <select class="form-control" formControlName="District"
+                        style="min-width: 17em; max-width: 17em;">
+                        <option *ngFor="let district of districts" [value]="district">{{district}}
+                        </option>
+                    </select>
+                </label>
+            </div>
         </form>
-
-
         <div>
             <button type="button" class="btn btn-primary" style="float: right;" matStepperNext>Next</button>
             <button type="button" class="btn btn-danger" style="float: left;" matStepperNext (click)="onCancel()">Exit</button>
         </div>
-
     </mat-step>
-
-
     <mat-step>
-
         <ng-template matStepLabel><b>Advanced Details</b></ng-template>
-
         <form [formGroup]="updateDetails">
             <div>
                 <br>
-                <label style="float: left;font-weight: bold;"> Escalations:<input type="number" style="min-width: 20em;"
-                        class="form-control" formControlName="Escalations"></label>
-                <label style="float: right; font-weight: bold;"> Appreciations:<input type="number"
+                <label style="float: left;font-weight: bold;"> Escalations Done:<input type="number"
+                        style="min-width: 20em;" class="form-control" formControlName="Escalation"></label>
+                <label style="float: right; font-weight: bold;"> Appreciations Received:<input type="number"
                         style="min-width: 20em;" class="form-control" formControlName="Appreciations"></label>
             </div>
         </form>
-        <br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
         <div>
             <button type="button" class="btn btn-info" style="float: left;" matStepperPrevious>Back</button>
             <button type="button" class="btn btn-primary" style="float: right;" matStepperNext>Next</button>
         </div>
-
     </mat-step>
-
     <mat-step>
-
         <ng-template matStepLabel><b>Comments</b></ng-template>
         <form [formGroup]="updateDetails">
             <div class="input-group-prepend" style=" font-weight: bold;"> <label>
@@ -49,7 +71,7 @@
 
                         </textarea></label>
             </div>
-            <br><br><br>
+            <br><br><br><br><br><br><br><br>
         </form>
 
 

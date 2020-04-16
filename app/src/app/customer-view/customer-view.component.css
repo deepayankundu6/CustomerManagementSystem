@@ -2,7 +2,6 @@
         color: white;
         font-weight: bolder;
         float: right;
-        margin-right: 5em;
     }
     
     .form-control {
@@ -29,7 +28,7 @@
     
     mat-card {
         font-weight: bold;
-        background-color: #FFECDB;
+        background-color: white;
         border-radius: 1em;
         border: 0 solid skyblue;
         padding: 2.5em;
@@ -38,7 +37,7 @@
     
      :hover mat-card {
         font-weight: bold;
-        background-color: #FFECDB;
+        background-color: white;
         border-radius: 1em;
         border: none;
         box-shadow: grey;
