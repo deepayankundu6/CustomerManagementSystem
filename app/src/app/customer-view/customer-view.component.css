@@ -31,18 +31,19 @@
         background-color: white;
         border-radius: 1em;
         border: 0 solid skyblue;
-        padding: 2.5em;
         transition: transform .5s;
+        padding-bottom: 2.5em;
+        margin-bottom: 1em;
     }
     
-     :hover .card {
+    .card:hover {
         font-weight: bold;
+        padding-bottom: 2.5em;
         background-color: white;
         border-radius: 1em;
         border: none;
         box-shadow: grey;
         text-shadow: black;
-        padding: 2.5em;
         -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);

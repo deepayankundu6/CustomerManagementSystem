@@ -9,8 +9,8 @@
     <br>
     <mat-tab label="Card View">
         <br>
-        <div class="container" *ngFor="let customer of customers | cidFilter : SearchCustomer">
-            <mat-card class="card">
+        <div class="container">
+            <mat-card class="card" *ngFor="let customer of customers | cidFilter : SearchCustomer">
                 <mat-card-title class="title">
                     {{customer.FirstName +' '+ customer.LastName}}
                     <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
@@ -31,7 +31,6 @@
                     <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
                 </mat-card-footer>
             </mat-card>
-            <br>
         </div>
     </mat-tab>
     <mat-tab label="Accordian View">
