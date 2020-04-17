@@ -1,12 +1,12 @@
 .container {
-    padding: 2% 5% 5% 25%;
-    font-weight: bold;
+  padding: 2% 5% 5% 25%;
+  font-weight: bold;
 }
 
 select {
-    min-width: 16em;
+  min-width: 16em;
 }
 
 textarea {
-    min-width: 16em;
+  min-width: 16em;
 }

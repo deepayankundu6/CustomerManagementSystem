@@ -1,102 +1,102 @@
     .button {
-        color: white;
-        font-weight: bolder;
-        float: right;
+      color: white;
+      font-weight: bolder;
+      float: right;
     }
-    
+
     .form-control {
-        max-width: 50em;
-        margin-left: 2em;
-        position: relative;
+      max-width: 50em;
+      margin-left: 2em;
+      position: relative;
     }
-    
+
     input {
-        float: left;
+      float: left;
     }
-    
+
     .esclations {
-        color: red;
-        float: left;
-        margin-left: 1em;
+      color: red;
+      float: left;
+      margin-left: 1em;
     }
-    
+
     .esctab {
-        margin-top: 0.5em;
-        color: red;
-        float: left;
+      margin-top: 0.5em;
+      color: red;
+      float: left;
     }
-    
+
     .appretiaitons {
-        color: chartreuse;
-        float: right;
-        margin-right: 1em;
+      color: chartreuse;
+      float: right;
+      margin-right: 1em;
     }
-    
+
     .apctab {
-        margin-top: 0.5em;
-        color: chartreuse;
-        float: right;
+      margin-top: 0.5em;
+      color: chartreuse;
+      float: right;
     }
-    
+
     .card {
-        font-weight: bold;
-        background-color: white;
-        border-radius: 1em;
-        border: 0 solid skyblue;
-        transition: transform .5s;
-        padding-bottom: 2.5em;
-        margin-bottom: 1em;
-        padding-bottom: 3em;
+      font-weight: bold;
+      background-color: white;
+      border-radius: 1em;
+      border: 0 solid skyblue;
+      transition: transform .5s;
+      padding-bottom: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 3em;
     }
-    
+
     .card:hover {
-        font-weight: bold;
-        padding-bottom: 2.5em;
-        padding-bottom: 3em;
-        background-color: white;
-        border-radius: 1em;
-        border: none;
-        box-shadow: grey;
-        text-shadow: black;
-        -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+      font-weight: bold;
+      padding-bottom: 2.5em;
+      padding-bottom: 3em;
+      background-color: white;
+      border-radius: 1em;
+      border: none;
+      box-shadow: grey;
+      text-shadow: black;
+      -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
     }
-    
+
     .email {
-        float: left;
-        font-weight: bold;
+      float: left;
+      font-weight: bold;
     }
-    
+
     .gender {
-        float: right;
-        font-weight: bold;
+      float: right;
+      font-weight: bold;
     }
-    
+
     .trash {
-        float: right;
-        cursor: pointer;
+      float: right;
+      cursor: pointer;
     }
-    
+
     .comment {
-        font-weight: bold;
-        margin-left: 36em;
-        color: cadetblue;
+      font-weight: bold;
+      margin-left: 36em;
+      color: cadetblue;
     }
-    
+
     .title {
-        cursor: pointer;
+      cursor: pointer;
     }
-    
+
     .pagination {
-        position: absolute;
-        bottom: 1em;
-        float: center;
-        background-color: #C9E6FF;
-        font-weight: bold;
+      position: absolute;
+      bottom: 1em;
+      float: center;
+      background-color: #C9E6FF;
+      font-weight: bold;
     }
-    
+
     .accordian {
-        margin-left: 14em;
-        margin-right: 12em;
+      margin-left: 14em;
+      margin-right: 12em;
     }

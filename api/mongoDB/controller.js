@@ -21,7 +21,7 @@ exports.createDatabase = () => {
     });
 }
 
-exports.insertOneDocument = async(item) => {
+exports.insertOneDocument = async (item) => {
     let result;
     let client;
     try {
@@ -37,7 +37,7 @@ exports.insertOneDocument = async(item) => {
     return result;
 }
 
-exports.insertManyDocuments = async(item) => {
+exports.insertManyDocuments = async (item) => {
     let result;
     let client;
     try {
@@ -53,7 +53,7 @@ exports.insertManyDocuments = async(item) => {
     return result;
 }
 
-exports.findDocuments = async() => {
+exports.findDocuments = async () => {
     let result;
     let client;
     try {
@@ -69,7 +69,7 @@ exports.findDocuments = async() => {
     return result;
 }
 
-exports.findOneDocument = async(query) => {
+exports.findOneDocument = async (query) => {
     let result;
     let client;
     try {
@@ -85,7 +85,7 @@ exports.findOneDocument = async(query) => {
     return result;
 }
 
-exports.updateOneDocument = async(query, newValues) => {
+exports.updateOneDocument = async (query, newValues) => {
     let result;
     let client;
     let values = { $set: newValues }
@@ -102,7 +102,7 @@ exports.updateOneDocument = async(query, newValues) => {
     return result;
 }
 
-exports.deleteOneDocument = async(query) => {
+exports.deleteOneDocument = async (query) => {
     let result;
     let client;
     try {
@@ -118,7 +118,7 @@ exports.deleteOneDocument = async(query) => {
     return result;
 }
 
-exports.deleteManyDocuments = async(query) => {
+exports.deleteManyDocuments = async (query) => {
     let result;
     let client;
     try {

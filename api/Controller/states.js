@@ -3,7 +3,7 @@ var url = "mongodb://localhost:27017/MyDB";
 var DatabaseName = "MyDB";
 var CollectionName = "India"
 
-exports.getDistrict = async(req, res) => {
+exports.getDistrict = async (req, res) => {
     console.log("Inside getDistrict");
     let state = req.params.state;
 
@@ -15,7 +15,7 @@ exports.getDistrict = async(req, res) => {
     res.send(response[0].districts);
 }
 
-exports.getStates = async(req, res) => {
+exports.getStates = async (req, res) => {
     console.log("Inside getStates");
     let response = await findDocuments();
     let states = [];
@@ -25,7 +25,7 @@ exports.getStates = async(req, res) => {
     res.send(states);
 }
 
-findDocuments = async() => {
+findDocuments = async () => {
     let result;
     let client;
     try {
@@ -41,7 +41,7 @@ findDocuments = async() => {
     return result;
 }
 
-findOneDocument = async(query) => {
+findOneDocument = async (query) => {
     let result;
     let client;
     try {

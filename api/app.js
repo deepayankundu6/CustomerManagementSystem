@@ -9,8 +9,8 @@ const config = require('./webpack.config.js');
 const webpack = require('webpack');
 const compiler = webpack(config);
 const webpackDevMiddleware = require('webpack-dev-middleware')(
-  compiler,
-  config.devServer
+    compiler,
+    config.devServer
 )
 var app = express();
 var router = express.Router();
@@ -29,8 +29,8 @@ var customers = require('./Controller/customers');
 var states = require('./Controller/states');
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
+app.use(function(req, res, next) {
+    next(createError(404));
 });
 
 // creates mongo DB connection
@@ -38,18 +38,18 @@ mongoDB.createDatabase();
 
 /* GET home page. */
 router.get('/health', (req, res) => {
-  res.send("OK API is running fine");
+    res.send("OK API is running fine");
 });
 
 // error handler
-app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use(function(err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 router.post('/customer/create', customers.createCustomer);
@@ -64,7 +64,7 @@ router.get('/states/getstates', states.getStates);
 
 
 app.listen(PORT, () => {
-  console.log(`server running on port ${PORT}`)
+    console.log(`server running on port ${PORT}`)
 });
 
 module.exports = app;

@@ -1,6 +1,6 @@
 var MongoDB = require('../mongoDB/controller');
 
-exports.createCustomer = async(req, res) => {
+exports.createCustomer = async (req, res) => {
     console.log("Inside createCustomer");
     let details = req.body;
     let cusotmerID = Math.floor(Math.random() * 1000000000);
@@ -20,14 +20,14 @@ exports.createCustomer = async(req, res) => {
     res.send(response);
 }
 
-exports.fetchAllCustomer = async(req, res) => {
+exports.fetchAllCustomer = async (req, res) => {
     console.log("Inside fetch customer");
     let response = await MongoDB.findDocuments();
     response.forEach(el => delete el._id);
     res.send(response);
 }
 
-exports.fetchCustomer = async(req, res) => {
+exports.fetchCustomer = async (req, res) => {
     console.log("Inside fetchCustomer");
     let details = req.body;
     let query = {
@@ -38,7 +38,7 @@ exports.fetchCustomer = async(req, res) => {
     res.send(response[0]);
 }
 
-exports.modifyCustomer = async(req, res) => {
+exports.modifyCustomer = async (req, res) => {
     console.log("Inside fetchCustomer");
     let details = req.body;
     let query = {
@@ -49,7 +49,7 @@ exports.modifyCustomer = async(req, res) => {
     res.send(response);
 }
 
-exports.deleteCustomer = async(req, res) => {
+exports.deleteCustomer = async (req, res) => {
     console.log("Inside deleteCustomer");
     let details = req.body;
     let query = {
