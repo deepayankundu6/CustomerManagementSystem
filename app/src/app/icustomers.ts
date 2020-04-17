@@ -7,7 +7,10 @@ export interface ICustomers {
     State: String
     Gender: String
     CustomerID: Number
-    Comments: [object]
+    Comments: [{
+        Message: String,
+        Time: String
+    }]
     Escalation: Number
     Appreciations: Number
 }

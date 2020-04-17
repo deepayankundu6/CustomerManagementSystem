@@ -12,14 +12,15 @@
 }
 
 .date {
-  margin: 1em;
+  margin-right: 1.5em;
+  margin-left: 0.5em;
   color: White;
   font-weight: bold;
   text-align: left;
 }
 
 .time {
-  margin: 1em;
+  margin-left: 5em;
   color: white;
   font-weight: bold;
   text-align: right;
