@@ -1,7 +1,6 @@
 <mat-horizontal-stepper [linear]="false" #stepper>
 
-    <mat-step>
-
+    <mat-step [stepControl]="updateDetails">
         <ng-template matStepLabel><b>Basic Details</b></ng-template>
 
         <form [formGroup]="updateDetails" style="font-weight: bold;">
