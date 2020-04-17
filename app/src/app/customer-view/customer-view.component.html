@@ -13,6 +13,8 @@
             <mat-card class="card" *ngFor="let customer of customers | cidFilter : SearchCustomer">
                 <mat-card-title class="title">
                     {{customer.FirstName +' '+ customer.LastName}}
+                    <a href="mailto:{{customer.Email}}"><i class="fas fa-envelope"
+                            style="color: blue; margin-left: 0.1em; font-size: 0.8em;"></i></a>
                     <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
                 </mat-card-title>
                 <mat-card-subtitle routerLink='view/{{customer.CustomerID}}' class="title"> {{customer.CustomerID}}
@@ -39,14 +41,16 @@
             <mat-accordion *ngFor="let customer of customers | cidFilter : SearchCustomer">
                 <mat-expansion-panel [expanded]=false>
                     <mat-expansion-panel-header>
-                        <mat-panel-title style="font-weight: bold;min-width: 65em;">
+                        <mat-panel-title style="font-weight: bold;min-width: 55em;">
                             {{customer.FirstName +" " + customer.LastName}}
+                            <a href="mailto:{{customer.Email}}"><i class="fas fa-envelope"
+                                    style="color: blue; margin-left: 0.4em; font-size: 1em;"></i></a>
                         </mat-panel-title>
-                        <mat-panel-description style="position: absolute; margin-left: 15em;" routerLink='view/{{customer.CustomerID}}'>
+                        <mat-panel-description style="position: absolute; margin-left: 30em;" routerLink='view/{{customer.CustomerID}}'>
                             {{customer.CustomerID}}
                         </mat-panel-description>
                         <mat-panel-description>
-                            <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
+                            <img class="trash" style="margin-left: 10em;" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png" (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip" title="Remove Customer!" />
                         </mat-panel-description>
                     </mat-expansion-panel-header>
 
