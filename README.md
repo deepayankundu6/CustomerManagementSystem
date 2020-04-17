@@ -27,7 +27,7 @@ This project is made to ease the management of customer records in an organizati
 
 ## Developer:
 
-1) Frontend: Deepayan Kundu
-2) Backend: Deepayan Kundu
+1) Front-End: Deepayan Kundu
+2) Back-End: Deepayan Kundu
 
 ## Credits: Deepayan Kundu
