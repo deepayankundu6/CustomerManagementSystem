@@ -37,11 +37,10 @@ export class EditcustomerdetailsComponent implements OnInit {
       Validators.minLength(1)]),
       Gender: new FormControl(this.customer.Gender, [Validators.required,
       Validators.minLength(1)]),
-      Escalation: new FormControl(this.customer.Escalation, [Validators.required,
-      Validators.minLength(1)]),
-      Appreciations: new FormControl(this.customer.Appreciations, [Validators.required,
-      Validators.minLength(1)]),
-      Comments: new FormControl("")
+      Escalation: new FormControl(this.customer.Escalation),
+      Appreciations: new FormControl(this.customer.Appreciations),
+      Comments: new FormControl(""),
+      Pinned: new FormControl(false)
     }
     );
   }
@@ -52,7 +51,13 @@ export class EditcustomerdetailsComponent implements OnInit {
     if (this.updateDetails.value.Comments.length > 0) {
       let comment = {
         "Message": this.updateDetails.value.Comments,
-        "Time": date
+        "Time": date,
+        "Pinned": this.updateDetails.value.Pinned
+      }
+      if (this.updateDetails.value.Pinned) {
+        this.customer.Comments.forEach(cmt => {
+          cmt.Pinned = false;
+        })
       }
       this.customer.Comments.unshift(comment)
     }

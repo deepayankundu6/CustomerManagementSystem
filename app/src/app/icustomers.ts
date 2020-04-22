@@ -9,7 +9,8 @@ export interface ICustomers {
     CustomerID: Number
     Comments: [{
         Message: String,
-        Time: String
+        Time: String,
+        Pinned: boolean
     }]
     Escalation: Number
     Appreciations: Number

@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/MyDB";
 var DatabaseName = "MyDB";
-var CollectionName = "India"
+var CollectionName = "States"
 
 exports.getDistrict = async (req, res) => {
     console.log("Inside getDistrict");

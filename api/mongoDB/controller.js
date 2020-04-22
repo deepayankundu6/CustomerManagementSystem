@@ -2,6 +2,7 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/MyDB";
 var DatabaseName = "MyDB";
 var CollectionName = "Customers"
+var states = require('./../States_List').statesList;
 
 exports.createDatabase = () => {
     let response;
@@ -128,6 +129,28 @@ exports.deleteManyDocuments = async (query) => {
         });
         db = client.db(DatabaseName);
         result = await db.collection(CollectionName).deleteMany(query);
+    } catch (err) { console.error(err); } // catch any mongo error here
+    finally { client.close(); } // make sure to close your connection after
+
+    return result;
+}
+
+exports.configureStates = async () => {
+    let result;
+    let client;
+    try {
+        client = await MongoClient.connect(url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
+        db = client.db(DatabaseName);
+        result = await db.collection("States").find({}).toArray();
+        if (!result.length >> 0) {
+            console.log("Writing states data in database");
+            result = await db.collection("States").insertMany(states);
+            console.log("Finished writing states data in database");
+        }
+
     } catch (err) { console.error(err); } // catch any mongo error here
     finally { client.close(); } // make sure to close your connection after
 

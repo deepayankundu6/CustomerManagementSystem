@@ -12,7 +12,8 @@ exports.createCustomer = async (req, res) => {
     today = day + ' - ' + month + ' - ' + year;
     details.Comments = [{
         "Message": "Customer added",
-        "Time": today
+        "Time": today,
+        "Pinned": false
     }];
     details.Escalation = 0;
     details.Appreciations = 0;
@@ -56,5 +57,16 @@ exports.deleteCustomer = async (req, res) => {
         "CustomerID": details.CustomerID
     };
     let response = await MongoDB.deleteOneDocument(query);
+    res.send(response);
+}
+
+exports.modifyComment = async (req, res) => {
+    console.log("Inside fetchCustomer");
+    let details = req.body;
+    let query = {
+        "CustomerID": details.CustomerID
+    };
+    delete details.CustomerID
+    let response = await MongoDB.updateOneDocument(query, details);
     res.send(response);
 }

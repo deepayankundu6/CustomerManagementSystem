@@ -16,10 +16,10 @@ export class CustomerDetailsComponent implements OnInit {
   customer: ICustomers;
   customerID = Number(this.activatedRoute.snapshot.params.id);
   constructor(private http: HttpClient, private toastr: ToastrService,
-    private spinner: NgxSpinnerService, private dialog: MatDialog, private activatedRoute: ActivatedRoute) { }
+    private spinner: NgxSpinnerService, private dialog: MatDialog, private activatedRoute: ActivatedRoute) { this.getCustomer() }
 
   ngOnInit(): void {
-    this.getCustomer()
+
   }
 
   getCustomer() {
@@ -45,5 +45,11 @@ export class CustomerDetailsComponent implements OnInit {
     dialogReff.afterClosed().subscribe(() => {
       this.getCustomer();
     })
+  }
+  onPinClick(comment) {
+    console.log(comment);
+  }
+  onDeleteClick(comment) {
+    console.log(comment);
   }
 }

@@ -20,7 +20,8 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MatStepperModule } from '@angular/material/stepper'
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { MatStepperModule } from '@angular/material/stepper'
     MatExpansionModule,
     MatPaginatorModule,
     MatTabsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatCheckboxModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

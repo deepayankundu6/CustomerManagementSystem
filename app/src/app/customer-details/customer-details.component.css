@@ -1,0 +1,18 @@
+.trash {
+  margin-left: 1em;
+  color: red;
+  cursor: pointer;
+}
+
+.unpin {
+  margin-left: 1em;
+  color: greenyellow;
+  cursor: pointer;
+}
+
+.pinned {
+  margin-left: 1em;
+  color: greenyellow;
+  cursor: pointer;
+  transform: rotate(30deg);
+}

@@ -23,26 +23,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', router);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 var mongoDB = require('../api/mongoDB/controller');
 var customers = require('./Controller/customers');
 var states = require('./Controller/states');
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     next(createError(404));
 });
 
 // creates mongo DB connection
 mongoDB.createDatabase();
-
+mongoDB.configureStates();
 /* GET home page. */
 router.get('/health', (req, res) => {
     res.send("OK API is running fine");
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -57,6 +56,7 @@ router.get('/customer/getall', customers.fetchAllCustomer);
 router.post('/customer/get', customers.fetchCustomer);
 router.post('/customer/update', customers.modifyCustomer);
 router.post('/customer/delete', customers.deleteCustomer);
+router.post('/customer/comment/modify', customers.modifyComment);
 
 router.get('/states/getdistrict/:state', states.getDistrict);
 router.get('/states/getstates', states.getStates);

@@ -24,10 +24,13 @@ export class CustomerViewComponent implements OnInit {
   pageEvent: PageEvent;
   data: ICustomers[];
   constructor(private http: HttpClient, private toastr: ToastrService,
-    private spinner: NgxSpinnerService, private dialog: MatDialog) { }
+    private spinner: NgxSpinnerService, private dialog: MatDialog) {
+
+    this.getCustomers();
+  }
 
   ngOnInit(): void {
-    this.getCustomers();
+
   }
 
   getCustomers() {

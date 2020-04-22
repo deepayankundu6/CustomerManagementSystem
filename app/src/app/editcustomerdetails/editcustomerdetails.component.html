@@ -50,6 +50,9 @@
                 <label style="float: left; font-weight: bold; margin-top: 2em;">
                     Comment:<textarea style="min-width: 70em;" class="form-control"
                         formControlName="Comments"></textarea>
+                    <mat-checkbox class=" checkbox" formControlName="Pinned"
+                        [disabled]="updateDetails.value.Comments.length <= 0">Pin
+                    </mat-checkbox>
                 </label>
             </div>
         </form>
@@ -58,6 +61,7 @@
             <button type="button" class="btn btn-info" style="float: left;" matStepperPrevious>Back</button>
             <button type="button" class="btn btn-success" [disabled]="!updateDetails.valid" style="float: right;"
                 (click)="onSubmitClick()">Submit</button>
+
         </div>
     </mat-step>
 </mat-horizontal-stepper>
