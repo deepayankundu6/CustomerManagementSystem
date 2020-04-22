@@ -12,7 +12,7 @@ export class PagetitleComponent implements OnChanges {
   constructor() {
     setInterval(() => {
       this.date = formatDate(Date(), 'dd-MMMM-yyyy', 'en-US', '+0530');
-      this.time = formatDate(Date(), ' hh:mm:ss a', 'en-US', '+0530');
+      this.time = formatDate(Date(), ' hh:mm a', 'en-US', '+0530');
     }, 1);
 
   }
