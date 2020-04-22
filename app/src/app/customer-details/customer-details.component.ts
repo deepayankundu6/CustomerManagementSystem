@@ -47,9 +47,35 @@ export class CustomerDetailsComponent implements OnInit {
     })
   }
   onPinClick(comment) {
-    console.log(comment);
+    this.customer.Comments.forEach(cmt => {
+      cmt.Pinned = false;
+      if (cmt.Message.includes(comment.Message)) {
+        comment.Pinned = !comment.Pinned
+        cmt = comment;
+      }
+    });
+    this.http.post("api/customer/update", this.customer).subscribe((data) => {
+    }, (error) => {
+      console.error(error)
+    });
+    this.getCustomer();
   }
   onDeleteClick(comment) {
-    console.log(comment);
+    let index = -1;
+    this.customer.Comments.forEach((cmt, i) => {
+      if (cmt.Message.includes(comment.Message)) {
+        index = i;
+      }
+    });
+    if (index != -1) {
+      this.customer.Comments.splice(index, 1);
+    }
+    this.http.post("api/customer/update", this.customer).subscribe((data) => {
+      this.toastr.success("Success", "Comment deleted successfully");
+    }, (error) => {
+      this.toastr.error("Failure", "Failed to delete Cooment");
+      console.error(error)
+    });
+    this.getCustomer();
   }
 }

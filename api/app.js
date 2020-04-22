@@ -56,8 +56,6 @@ router.get('/customer/getall', customers.fetchAllCustomer);
 router.post('/customer/get', customers.fetchCustomer);
 router.post('/customer/update', customers.modifyCustomer);
 router.post('/customer/delete', customers.deleteCustomer);
-router.post('/customer/comment/modify', customers.modifyComment);
-
 router.get('/states/getdistrict/:state', states.getDistrict);
 router.get('/states/getstates', states.getStates);
 

@@ -22,7 +22,7 @@ exports.createCustomer = async (req, res) => {
 }
 
 exports.fetchAllCustomer = async (req, res) => {
-    console.log("Inside fetch customer");
+    console.log("Inside fetchAllCustomer");
     let response = await MongoDB.findDocuments();
     response.forEach(el => delete el._id);
     res.send(response);
@@ -40,7 +40,7 @@ exports.fetchCustomer = async (req, res) => {
 }
 
 exports.modifyCustomer = async (req, res) => {
-    console.log("Inside fetchCustomer");
+    console.log("Inside modifyCustomer");
     let details = req.body;
     let query = {
         "CustomerID": details.CustomerID
@@ -57,16 +57,5 @@ exports.deleteCustomer = async (req, res) => {
         "CustomerID": details.CustomerID
     };
     let response = await MongoDB.deleteOneDocument(query);
-    res.send(response);
-}
-
-exports.modifyComment = async (req, res) => {
-    console.log("Inside fetchCustomer");
-    let details = req.body;
-    let query = {
-        "CustomerID": details.CustomerID
-    };
-    delete details.CustomerID
-    let response = await MongoDB.updateOneDocument(query, details);
     res.send(response);
 }
