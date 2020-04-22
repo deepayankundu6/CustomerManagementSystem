@@ -31,8 +31,15 @@
                 </mat-card-content>
                 <br>
                 <mat-card-footer>
-                    <div class=" esclations "><i class="fas fa-thumbs-down"></i> {{customer.Escalation}}</div>
-                    <div class=" appretiaitons "><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
+                    <div style="margin-bottom: -2.5em;"><span class=" esclations"><i class="fas fa-thumbs-down"></i>
+                            {{customer.Escalation}}</span>
+                        <span *ngFor="let Comment of customer.Comments">
+                            <span *ngIf="Comment.Pinned"
+                                style="margin-left: 28em; color: blue;">{{Comment.Message}}</span>
+                        </span>
+                        <span class=" appretiaitons"><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}}</span>
+                    </div>
+
                 </mat-card-footer>
             </mat-card>
         </div>
@@ -68,6 +75,9 @@
                     </div>
                     <br>
                     <div class="esctab"><i class="fas fa-thumbs-down"></i> {{customer.Escalation}}</div>
+                    <span *ngFor="let Comment of customer.Comments">
+                        <span *ngIf="Comment.Pinned" style="margin-left: 30em; color: blue;">{{Comment.Message}}</span>
+                    </span>
                     <div class="apctab"><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}} </div>
                 </mat-expansion-panel>
                 <br>
