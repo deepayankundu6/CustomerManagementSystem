@@ -16,10 +16,10 @@ export class CustomerDetailsComponent implements OnInit {
   customer: ICustomers;
   customerID = Number(this.activatedRoute.snapshot.params.id);
   constructor(private http: HttpClient, private toastr: ToastrService,
-    private spinner: NgxSpinnerService, private dialog: MatDialog, private activatedRoute: ActivatedRoute) { this.getCustomer() }
+    private spinner: NgxSpinnerService, private dialog: MatDialog, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.getCustomer();
   }
 
   getCustomer() {
@@ -36,6 +36,7 @@ export class CustomerDetailsComponent implements OnInit {
       console.error(error);
     });
   }
+
   onEditClick() {
     let dialogReff = this.dialog.open(EditcustomerdetailsComponent, {
       height: "90em",
@@ -46,6 +47,7 @@ export class CustomerDetailsComponent implements OnInit {
       this.getCustomer();
     })
   }
+
   onPinClick(comment) {
     this.customer.Comments.forEach(cmt => {
       if (cmt.Message.includes(comment.Message)) {
@@ -61,6 +63,7 @@ export class CustomerDetailsComponent implements OnInit {
       console.error(error)
     });
   }
+
   onDeleteClick(comment) {
     let index = -1;
     this.customer.Comments.forEach((cmt, i) => {
