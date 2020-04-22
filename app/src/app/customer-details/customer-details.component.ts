@@ -48,13 +48,14 @@ export class CustomerDetailsComponent implements OnInit {
   }
   onPinClick(comment) {
     this.customer.Comments.forEach(cmt => {
-      cmt.Pinned = false;
       if (cmt.Message.includes(comment.Message)) {
-        comment.Pinned = !comment.Pinned
+        comment.Pinned = !comment.Pinned;
         cmt = comment;
+      } else {
+        cmt.Pinned = false;
       }
     });
-    this.http.post("api/customer/update", this.customer).subscribe((data) => {
+    this.http.post("api/customer/update", this.customer).subscribe(() => {
     }, (error) => {
       console.error(error)
     });
@@ -70,7 +71,7 @@ export class CustomerDetailsComponent implements OnInit {
     if (index != -1) {
       this.customer.Comments.splice(index, 1);
     }
-    this.http.post("api/customer/update", this.customer).subscribe((data) => {
+    this.http.post("api/customer/update", this.customer).subscribe(() => {
       this.toastr.success("Success", "Comment deleted successfully");
     }, (error) => {
       this.toastr.error("Failure", "Failed to delete Cooment");

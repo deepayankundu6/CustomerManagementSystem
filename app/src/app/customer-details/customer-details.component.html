@@ -41,7 +41,7 @@
                                 <div style="float: left;">{{comment.Message}}</div>
                                 <div style="float: rignt; margin-left: 50em;">{{comment.Time}}
                                     <i class="fas fa-thumbtack" [ngClass]="comment.Pinned? 'pinned' :'unpin'"
-                                        title="Pin / Unpin Comment" (click)="onPinClick(comment)"></i>
+                                        title="Pin / Un-pin Comment" (click)="onPinClick(comment)"></i>
                                     <i class="far fa-trash-alt trash" title="Delete Comment"
                                         (click)="onDeleteClick(comment)"></i>
                                 </div>
