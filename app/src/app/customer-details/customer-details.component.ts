@@ -56,10 +56,10 @@ export class CustomerDetailsComponent implements OnInit {
       }
     });
     this.http.post("api/customer/update", this.customer).subscribe(() => {
+      this.getCustomer();
     }, (error) => {
       console.error(error)
     });
-    this.getCustomer();
   }
   onDeleteClick(comment) {
     let index = -1;
@@ -72,11 +72,11 @@ export class CustomerDetailsComponent implements OnInit {
       this.customer.Comments.splice(index, 1);
     }
     this.http.post("api/customer/update", this.customer).subscribe(() => {
+      this.getCustomer();
       this.toastr.success("Success", "Comment deleted successfully");
     }, (error) => {
       this.toastr.error("Failure", "Failed to delete Cooment");
       console.error(error)
     });
-    this.getCustomer();
   }
 }
