@@ -82,4 +82,7 @@ export class CustomerDetailsComponent implements OnInit {
       console.error(error)
     });
   }
+  getMessage(PinStatus) {
+    return PinStatus ? "Unpin" : "Pin";
+  }
 }
