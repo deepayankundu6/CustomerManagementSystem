@@ -66,7 +66,6 @@ createDatabase = () => {
             useNewUrlParser: true
         })).then((db => {
             dbo.createCollection(CollectionName);
-            console.log("Collection created!");
             db.close();
         })).catch((err) => {
             console.log("There are some errors:", err);

@@ -7,12 +7,18 @@ var states = require('./../States_List').statesList;
 exports.createDatabase = () => {
     let response;
     let client;
+    let dummyPayload = {
+        "Name": "Dummy"
+    };
     let MongoDBPromise = new Promise((resolve, reject) => {
         resolve(client = MongoClient.connect(url, {
             useUnifiedTopology: true,
             useNewUrlParser: true
         })).then((db => {
-            dbo.createCollection(CollectionName);
+            db.createCollection(CollectionName);
+            console.log("Creating Customer Collection");
+            this.insertOne(dummyPayload);
+            this.deleteOne(dummyPayload);
             console.log("Collection created!");
             db.close();
         })).catch((err) => {
@@ -155,4 +161,9 @@ exports.configureStates = async () => {
     finally { client.close(); } // make sure to close your connection after
 
     return result;
+}
+
+exports.initializeDatabase = async () => {
+    await this.createDatabase();
+    await this.configureStates();
 }

@@ -13,10 +13,13 @@ import { EditcustomerdetailsComponent } from '../editcustomerdetails/editcustome
   styleUrls: ['./customer-details.component.css']
 })
 export class CustomerDetailsComponent implements OnInit {
+
   customer: ICustomers;
   customerID = Number(this.activatedRoute.snapshot.params.id);
+
   constructor(private http: HttpClient, private toastr: ToastrService,
-    private spinner: NgxSpinnerService, private dialog: MatDialog, private activatedRoute: ActivatedRoute) { }
+    private spinner: NgxSpinnerService, private dialog: MatDialog, private activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
     this.getCustomer();

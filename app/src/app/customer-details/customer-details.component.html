@@ -2,13 +2,13 @@
     <mat-expansion-panel [expanded]=true hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <b> Name:&nbsp; </b> {{customer.FirstName +" " + customer.LastName}}
+                <b> Name:&nbsp; </b> {{customer?.FirstName +" " + customer?.LastName}}
             </mat-panel-title>
             <mat-panel-description>
-                <b> Customer ID:&nbsp; </b> {{customer.CustomerID}}
+                <b> Customer ID:&nbsp; </b> {{customer?.CustomerID}}
             </mat-panel-description>
             <mat-panel-description>
-                <b> Email:&nbsp; </b> {{customer.Email}}
+                <b> Email:&nbsp; </b> {{customer?.Email}}
             </mat-panel-description>
         </mat-expansion-panel-header>
         <div>
@@ -16,28 +16,28 @@
                 <tbody>
                     <tr>
                         <th scope="row"> Address:</th>
-                        <td>{{customer.Address + " ," + customer.District + " ," + customer.State}}</td>
+                        <td>{{customer?.Address + " ," + customer?.District + " ," + customer?.State}}</td>
                     </tr>
                     <tr>
                         <th scope="row"> Gender:
                         </th>
-                        <td>{{customer.Gender}}</td>
+                        <td>{{customer?.Gender}}</td>
                     </tr>
                     <tr>
                         <th scope="row"> <i class="fas fa-thumbs-down" style="color: red;"></i> Escalations Done:</th>
-                        <td>{{customer.Escalation}}</td>
+                        <td>{{customer?.Escalation}}</td>
                     </tr>
                     <tr>
                         <th scope="row"> <i class="fas fa-thumbs-up" style=" color:chartreuse;"></i> Appreciations
                             Received:
                         </th>
-                        <td>{{customer.Appreciations}}</td>
+                        <td>{{customer?.Appreciations}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Comments:
                         </th>
                         <td>
-                            <div *ngFor="let comment of customer.Comments">
+                            <div *ngFor="let comment of customer?.Comments">
                                 <div style="float: left;">{{comment.Message}}</div>
                                 <div style="float: rignt; margin-left: 50em;">{{comment.Time}}
                                     <i class="fas fa-thumbtack" [ngClass]="comment.Pinned? 'pinned' :'unpin'"

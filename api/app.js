@@ -33,8 +33,11 @@ app.use(function (req, res, next) {
 });
 
 // creates mongo DB connection
-mongoDB.createDatabase();
-mongoDB.configureStates();
+
+console.log("Initializing Database started");
+mongoDB.initializeDatabase();
+console.log("Initialization finished");
+
 /* GET home page. */
 router.get('/health', (req, res) => {
     res.send("OK API is running fine");
