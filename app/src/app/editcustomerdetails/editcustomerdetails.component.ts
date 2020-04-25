@@ -77,6 +77,7 @@ export class EditcustomerdetailsComponent implements OnInit {
     }
     this.saveDetails(payload);
     this.spinner.hide();
+
     this.dialogRef.close();
   }
   onCancel() {

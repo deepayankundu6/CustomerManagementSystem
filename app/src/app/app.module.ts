@@ -22,6 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     PagetitleComponent,
     CidFilterPipe,
     CnfDialogBoxComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
