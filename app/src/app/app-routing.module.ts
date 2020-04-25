@@ -7,12 +7,12 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 
 
 const routes: Routes = [
-  { path: '', component: CustomerViewComponent },
-  { path: 'add', component: AddCustomerComponent },
-  { path: 'view/:id', component: CustomerDetailsComponent },
+  { path: '', redirectTo: 'cms', pathMatch: 'full' },
+  { path: 'cms', component: CustomerViewComponent },
+  { path: 'cms/add', component: AddCustomerComponent },
+  { path: 'cms/view/:id', component: CustomerDetailsComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
