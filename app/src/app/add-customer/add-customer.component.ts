@@ -41,7 +41,7 @@ export class AddCustomerComponent implements OnInit {
     this.http.post("api/customer/create", this.customerDetails.value).subscribe((data) => {
       this.toastr.success("Success", "Customer added successfully");
       this.spinner.hide();
-      this.router.navigateByUrl('');
+      this.router.navigateByUrl('cms');
     }, (error) => {
       this.toastr.error("Failure", "Failed to add customer");
       this.spinner.hide();

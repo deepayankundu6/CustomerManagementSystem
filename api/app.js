@@ -2,9 +2,8 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 const staticMiddleware = express.static("dist");
-var cookieParser = require('cookie-parser');
 const PORT = 5000;
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const config = require('./webpack.config.js');
 const webpack = require('webpack');
 const compiler = webpack(config);
@@ -13,19 +12,22 @@ const webpackDevMiddleware = require('webpack-dev-middleware')(
     config.devServer
 )
 var app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 var router = express.Router();
+
+app.set('view engine', 'jade');
 app.use(webpackDevMiddleware);
 app.use(staticMiddleware);
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', router);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
 var mongoDB = require('../api/mongoDB/controller');
 var customers = require('./Controller/customers');
 var states = require('./Controller/states');
+var users = require('./Controller/login');
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -61,6 +63,9 @@ router.post('/customer/update', customers.modifyCustomer);
 router.post('/customer/delete', customers.deleteCustomer);
 router.get('/states/getdistrict/:state', states.getDistrict);
 router.get('/states/getstates', states.getStates);
+router.post('/user/verify', users.verifyLogin);
+router.post('/user/create', users.createUser);
+
 
 
 

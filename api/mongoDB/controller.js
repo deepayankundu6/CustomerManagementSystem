@@ -3,23 +3,18 @@ var url = "mongodb://localhost:27017/MyDB";
 var DatabaseName = "MyDB";
 var CollectionName = "Customers"
 var states = require('./../States_List').statesList;
+var users = require('../Controller/login');
 
 exports.createDatabase = () => {
     let response;
     let client;
-    let dummyPayload = {
-        "Name": "Dummy"
-    };
     let MongoDBPromise = new Promise((resolve, reject) => {
         resolve(client = MongoClient.connect(url, {
             useUnifiedTopology: true,
             useNewUrlParser: true
         })).then((db => {
             db.createCollection(CollectionName);
-            console.log("Creating Customer Collection");
-            this.insertOne(dummyPayload);
-            this.deleteOne(dummyPayload);
-            console.log("Collection created!");
+            console.log("Connection established")
             db.close();
         })).catch((err) => {
             console.log("There are some errors:", err);
@@ -166,4 +161,5 @@ exports.configureStates = async () => {
 exports.initializeDatabase = async () => {
     await this.createDatabase();
     await this.configureStates();
+    await users.createDatabase();
 }

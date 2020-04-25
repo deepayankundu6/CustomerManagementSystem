@@ -23,7 +23,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { LoginCOmponentComponent } from './login-component/login-component.component';
+import { LoginComponentComponent } from './login-component/login-component.component';
 import { SignupComponentComponent } from './signup-component/signup-component.component';
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { SignupComponentComponent } from './signup-component/signup-component.co
     CnfDialogBoxComponent,
     CustomerDetailsComponent,
     LandingPageComponent,
-    LoginCOmponentComponent,
+    LoginComponentComponent,
     SignupComponentComponent
   ],
   imports: [
