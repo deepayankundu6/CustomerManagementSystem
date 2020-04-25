@@ -23,6 +23,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LoginCOmponentComponent } from './login-component/login-component.component';
+import { SignupComponentComponent } from './signup-component/signup-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     CidFilterPipe,
     CnfDialogBoxComponent,
     CustomerDetailsComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    LoginCOmponentComponent,
+    SignupComponentComponent
   ],
   imports: [
     BrowserModule,

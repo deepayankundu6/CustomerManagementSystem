@@ -12,4 +12,11 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onLoginCLick() {
+    console.log("Login CLick")
+  }
+
+  onSignupClick() {
+    console.log("SIgnup CLick")
+  }
 }
