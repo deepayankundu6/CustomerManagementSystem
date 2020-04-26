@@ -1,7 +1,7 @@
 <div class="input-group">
     <form [formGroup]="loginDetails" class="form">
         <div *ngIf="showMessage">
-            <p style="color: red;"><i class="far fa-times-circle"></i> The user is invalid</p>
+            <p style="color: red;"><i class="far fa-times-circle"></i>Invalid user.Please try again.</p>
         </div>
         <br>
         <div class="input-group-prepend"> <label> Email ID: <input type="email" class="form-control"
@@ -13,7 +13,7 @@
         </div>
 
         <p>
-            <button class="btn btn-info" style="margin-right: 4%;  min-width: 8em;" routerLink=''> Back
+            <button class="btn btn-info" style="margin-right: 4%;  min-width: 8em;" (click)="backClick()"> Back
             </button>
             <button class="btn btn-success" [disabled]="!loginDetails.valid" style=" min-width: 8em;"
                 (click)="verifyUser()">Login

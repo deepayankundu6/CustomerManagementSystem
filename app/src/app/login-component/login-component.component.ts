@@ -33,7 +33,7 @@ export class LoginComponentComponent implements OnInit {
     })
   }
   verifyUser() {
-    console.log(this.loginDetails.value);
+    this.spinner.show();
     this.http.post("api/user/verify", this.loginDetails.value).subscribe((data: { IsValid: Boolean }) => {
       this.isValid = data.IsValid;
       if (this.isValid) {
@@ -44,7 +44,10 @@ export class LoginComponentComponent implements OnInit {
         this.isValid = false;
         this.showMessage = true;
       }
+      this.spinner.hide();
     });
-    console.log(this.isValid);
+  }
+  backClick() {
+    this.dialogRef.close();
   }
 }
