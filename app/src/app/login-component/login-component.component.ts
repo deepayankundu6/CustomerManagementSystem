@@ -6,6 +6,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { LandingPageComponent } from '../landing-page/landing-page.component';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login-component',
@@ -21,7 +22,8 @@ export class LoginComponentComponent implements OnInit {
     private toastr: ToastrService,
     private spinner: NgxSpinnerService,
     private router: Router,
-    private dialogRef: MatDialogRef<LandingPageComponent>) { }
+    private dialogRef: MatDialogRef<LandingPageComponent>,
+    private authenticate: AuthService) { }
 
 
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class LoginComponentComponent implements OnInit {
     this.http.post("api/user/verify", this.loginDetails.value).subscribe((data: { IsValid: Boolean }) => {
       this.isValid = data.IsValid;
       if (this.isValid) {
+        this.authenticate.login();
         this.router.navigateByUrl("cms");
         this.dialogRef.close();
       }
