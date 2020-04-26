@@ -18,7 +18,7 @@ export class LandingPageComponent implements OnInit {
   onLoginCLick() {
     let dialogRef = this.dialog.open(LoginComponentComponent, {
       width: '40em',
-      height: '40em',
+      height: '30em',
     });
     dialogRef.afterClosed().subscribe((data) => {
     });

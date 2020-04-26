@@ -54,7 +54,7 @@
         </div>
         <mat-action-row>
             <button type="button" class="btn btn-info" style="float: left; margin-right: 88em;"
-                routerLink="">Back</button>
+                (click)="backClick()">Back</button>
             <button type="button" class="btn btn-warning" style="color: white; font-weight: bokd;"
                 (click)="onEditClick()">Edit</button>
         </mat-action-row>
@@ -62,3 +62,7 @@
     </mat-expansion-panel>
 
 </mat-accordion>
+
+<ngx-spinner bgColor="rgba(255,255,255,0.8)" size="2rem" color="#21e432" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: black">Loading...</p>
+</ngx-spinner>

@@ -14,7 +14,10 @@ export class AddCustomerComponent implements OnInit {
   customerDetails: FormGroup;
   districts: any;
   states: any;
-  constructor(private http: HttpClient, private toastr: ToastrService, private spinner: NgxSpinnerService, private router: Router) { }
+  constructor(private http: HttpClient,
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.customerDetails = new FormGroup({
@@ -69,5 +72,8 @@ export class AddCustomerComponent implements OnInit {
         console.log("No data received");
       }
     }, (error) => console.error(error));
+  }
+  backClick() {
+    this.router.navigateByUrl("cms");
   }
 }

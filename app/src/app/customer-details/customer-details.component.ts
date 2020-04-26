@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ICustomers } from "../icustomers";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EditcustomerdetailsComponent } from '../editcustomerdetails/editcustomerdetails.component';
 
 @Component({
@@ -18,7 +18,8 @@ export class CustomerDetailsComponent implements OnInit {
   customerID = Number(this.activatedRoute.snapshot.params.id);
 
   constructor(private http: HttpClient, private toastr: ToastrService,
-    private spinner: NgxSpinnerService, private dialog: MatDialog, private activatedRoute: ActivatedRoute,
+    private spinner: NgxSpinnerService, private dialog: MatDialog,
+    private activatedRoute: ActivatedRoute, private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -88,4 +89,8 @@ export class CustomerDetailsComponent implements OnInit {
   getMessage(PinStatus) {
     return PinStatus ? "Unpin" : "Pin";
   }
+  backClick() {
+    this.router.navigateByUrl("cms");
+  }
 }
+

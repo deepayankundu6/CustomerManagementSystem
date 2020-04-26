@@ -11,11 +11,13 @@ exports.verifyLogin = async (req, res) => {
     query = {
         "Email": email,
         "Password": password,
-    }
+    };
     let response = await this.findOneDocument(query);
     response = response[0];
-    if (query.Email == response.Email && query.Password == response.Password) {
-        isValid = true;
+    if (response) {
+        if (query.Email == response.Email && query.Password == response.Password) {
+            isValid = true;
+        }
     }
     res.send({
         "IsValid": isValid
@@ -30,7 +32,6 @@ exports.createUser = async (req, res) => {
         "Email": user.Email
     }
     let response = await this.findOneDocument(query);
-    console.log(response);
     if (response.length == 0) {
         response = await this.insertOneDocument(user);
         finalResponse.Result = response;
