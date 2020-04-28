@@ -1,5 +1,6 @@
 <div class="container" style="
     position: absolute;">
+    <button type="button" class="btn btn-warning" (click)="GoBack()">Back </button>
     <input type="number" class="form-control" placeholder="Customer ID" [(ngModel)]="SearchCustomer">
     <button routerLink='add' class="btn btn-primary button" *ngIf="canEdit">Add
         Customer</button>

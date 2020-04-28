@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CnfDialogBoxComponent } from '../cnf-dialog-box/cnf-dialog-box.component';
 import { PageEvent } from '@angular/material/paginator';
 import { AuthService } from '../auth.service';
-import { AdminCheckService } from '../admin-check.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-view',
@@ -28,7 +28,7 @@ export class CustomerViewComponent implements OnInit {
   data: ICustomers[];
   constructor(private http: HttpClient, private toastr: ToastrService,
     private spinner: NgxSpinnerService, private dialog: MatDialog,
-    private authenticate: AuthService
+    private authenticate: AuthService, private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -68,5 +68,8 @@ export class CustomerViewComponent implements OnInit {
       this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
       console.log(this.pageSizeOptions);
     }
+  }
+  GoBack() {
+    this.router.navigateByUrl("");
   }
 }
