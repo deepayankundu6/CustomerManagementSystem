@@ -31,6 +31,7 @@ exports.createUser = async (req, res) => {
     query = {
         "Email": user.Email
     }
+    user.IsAdmin = false;
     let response = await this.findOneDocument(query);
     if (response.length == 0) {
         response = await this.insertOneDocument(user);
