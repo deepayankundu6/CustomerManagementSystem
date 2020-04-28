@@ -14,7 +14,6 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./customer-details.component.css']
 })
 export class CustomerDetailsComponent implements OnInit {
-  admin = this.authenticate.admin;
   customer: ICustomers;
   customerID = Number(this.activatedRoute.snapshot.params.id);
 

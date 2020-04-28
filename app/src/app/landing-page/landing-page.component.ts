@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { LoginComponentComponent } from '../login-component/login-component.component';
 import { SignupComponentComponent } from '../signup-component/signup-component.component';
+import { AdminLoginComponent } from '../admin-login/admin-login.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -33,4 +34,12 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
+  onAdminClick() {
+    let dialogRef = this.dialog.open(AdminLoginComponent, {
+      width: '40em',
+      height: '40em',
+    });
+    dialogRef.afterClosed().subscribe((data) => {
+    });
+  }
 }

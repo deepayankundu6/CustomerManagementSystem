@@ -17,13 +17,7 @@
   padding: 2px 10px;
 }
 
-.login {
-  margin-top: 2em;
-  margin-left: 40em;
-}
-
-.signup {
-  margin-top: 2em;
-  margin-left: 5em;
-
+.placeholder {
+  margin-left: 45em;
+  margin-top: 3em;
 }

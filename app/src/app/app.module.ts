@@ -25,6 +25,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { SignupComponentComponent } from './signup-component/signup-component.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,9 @@ import { SignupComponentComponent } from './signup-component/signup-component.co
     CustomerDetailsComponent,
     LandingPageComponent,
     LoginComponentComponent,
-    SignupComponentComponent
+    SignupComponentComponent,
+    AdminLoginComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
