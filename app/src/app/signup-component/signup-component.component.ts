@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { LandingPageComponent } from '../landing-page/landing-page.component';
 
-
 @Component({
   selector: 'app-signup-component',
   templateUrl: './signup-component.component.html',
