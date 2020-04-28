@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { LandingPageComponent } from '../landing-page/landing-page.component';
 import { AuthService } from '../auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login-component',
@@ -15,7 +16,8 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponentComponent implements OnInit {
   loginDetails: FormGroup;
-  isValid: Boolean;
+  IsValid: Boolean;
+  IsAdmin: Boolean;
   showMessage: Boolean = false;
 
   constructor(private http: HttpClient,
@@ -36,17 +38,27 @@ export class LoginComponentComponent implements OnInit {
   }
   verifyUser() {
     this.spinner.show();
-    this.http.post("api/user/verify", this.loginDetails.value).subscribe((data: { IsValid: Boolean }) => {
-      this.isValid = data.IsValid;
-      if (this.isValid) {
+    this.http.post("api/user/verify", this.loginDetails.value).subscribe((data: {
+      IsValid: Boolean,
+      IsAdmin: Boolean
+    }) => {
+      console.log("Data:", data);
+      this.IsValid = data.IsValid;
+      this.IsAdmin = data.IsAdmin;
+      if (this.IsValid) {
         this.authenticate.login();
+        if (this.IsValid && this.IsAdmin) {
+          this.authenticate.setAdmin();
+        }
         this.router.navigateByUrl("cms");
         this.dialogRef.close();
       }
       else {
-        this.isValid = false;
+        this.IsValid = false;
         this.showMessage = true;
       }
+      console.log(this.IsValid);
+      console.log(this.IsAdmin);
       this.spinner.hide();
     });
   }

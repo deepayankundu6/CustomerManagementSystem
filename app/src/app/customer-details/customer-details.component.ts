@@ -6,6 +6,7 @@ import { ICustomers } from "../icustomers";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EditcustomerdetailsComponent } from '../editcustomerdetails/editcustomerdetails.component';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-customer-details',
@@ -13,13 +14,14 @@ import { EditcustomerdetailsComponent } from '../editcustomerdetails/editcustome
   styleUrls: ['./customer-details.component.css']
 })
 export class CustomerDetailsComponent implements OnInit {
-
+  admin = this.authenticate.admin;
   customer: ICustomers;
   customerID = Number(this.activatedRoute.snapshot.params.id);
 
   constructor(private http: HttpClient, private toastr: ToastrService,
     private spinner: NgxSpinnerService, private dialog: MatDialog,
-    private activatedRoute: ActivatedRoute, private router: Router
+    private activatedRoute: ActivatedRoute, private router: Router,
+    private authenticate: AuthService
   ) { }
 
   ngOnInit(): void {
