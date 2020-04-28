@@ -61,6 +61,7 @@ export class LoginComponentComponent implements OnInit {
       }
       else if (this.IsValid && this.IsAdmin) {
         this.authenticate.login();
+        this.adminAuthenticate.setAdmin();
         this.authenticate.enableEditing();
         this.router.navigateByUrl("cms");
         this.dialogRef.close();
