@@ -9,6 +9,7 @@ exports.verifyLogin = async (req, res) => {
     let password = req.body.Password;
     let isValid = false;
     let isadmin = false;
+    let canEdit = false;
     query = {
         "Email": email,
         "Password": password,
@@ -18,12 +19,14 @@ exports.verifyLogin = async (req, res) => {
     if (response) {
         if (query.Email == response.Email && query.Password == response.Password) {
             isValid = true;
+            isadmin = response.IsAdmin;
+            canEdit = response.CanEdit
         }
     }
     res.send({
         "IsValid": isValid,
-        "IsAdmin": response.IsAdmin,
-        "CanEdit": response.CanEdit
+        "IsAdmin": isadmin,
+        "CanEdit": canEdit
     });
 }
 

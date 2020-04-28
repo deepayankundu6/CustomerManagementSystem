@@ -2,6 +2,13 @@
       color: white;
       font-weight: bolder;
       float: right;
+      margin-right: 1em;
+    }
+
+    .back {
+      margin-right: 10em;
+      float: left;
+      margin-left: 1em;
     }
 
     .form-control {

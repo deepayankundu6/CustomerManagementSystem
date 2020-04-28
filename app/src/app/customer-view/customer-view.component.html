@@ -1,10 +1,7 @@
-<div class="container" style="
-    position: absolute;">
-    <button type="button" class="btn btn-warning" (click)="GoBack()">Back </button>
-    <input type="number" class="form-control" placeholder="Customer ID" [(ngModel)]="SearchCustomer">
-    <button routerLink='add' class="btn btn-primary button" *ngIf="canEdit">Add
-        Customer</button>
-</div>
+<button type="button" class="btn btn-danger back" (click)="GoBack()">Back </button>
+<input type="number" class="form-control" placeholder="Customer ID" style="margin-left: 7em;"
+    [(ngModel)]="SearchCustomer">
+<button routerLink='add' class="btn btn-primary button" *ngIf="canEdit">Add Customer</button>
 <br><br><br>
 <mat-tab-group>
     <br>
