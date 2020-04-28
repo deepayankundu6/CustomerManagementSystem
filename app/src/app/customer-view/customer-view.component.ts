@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CnfDialogBoxComponent } from '../cnf-dialog-box/cnf-dialog-box.component';
 import { PageEvent } from '@angular/material/paginator';
 import { AuthService } from '../auth.service';
+import { AdminCheckService } from '../admin-check.service';
 
 @Component({
   selector: 'app-customer-view',
@@ -16,6 +17,7 @@ import { AuthService } from '../auth.service';
 export class CustomerViewComponent implements OnInit {
   customers: ICustomers[];
   SearchCustomer: Number;
+  canEdit: Boolean;
   // MatPaginator Inputs
   length = 100;
   pageSize = 10;
@@ -26,10 +28,13 @@ export class CustomerViewComponent implements OnInit {
   data: ICustomers[];
   constructor(private http: HttpClient, private toastr: ToastrService,
     private spinner: NgxSpinnerService, private dialog: MatDialog,
-    private authenticate: AuthService) { }
+    private authenticate: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.getCustomers();
+    this.canEdit = this.authenticate.CanEdit;
+    console.log(this.canEdit);
   }
 
   getCustomers() {

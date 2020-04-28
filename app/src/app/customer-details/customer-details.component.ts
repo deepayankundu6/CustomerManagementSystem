@@ -15,6 +15,7 @@ import { AuthService } from '../auth.service';
 })
 export class CustomerDetailsComponent implements OnInit {
   customer: ICustomers;
+  canEdit: Boolean;
   customerID = Number(this.activatedRoute.snapshot.params.id);
 
   constructor(private http: HttpClient, private toastr: ToastrService,
@@ -25,6 +26,7 @@ export class CustomerDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCustomer();
+    this.canEdit = this.authenticate.CanEdit;
   }
 
   getCustomer() {

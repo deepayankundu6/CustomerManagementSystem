@@ -56,7 +56,7 @@
             <button type="button" class="btn btn-info" style="float: left; margin-right: 88em;"
                 (click)="backClick()">Back</button>
             <button type="button" class="btn btn-warning" style="color: white; font-weight: bokd;"
-                (click)="onEditClick()">Edit</button>
+                (click)="onEditClick()" *ngIf="canEdit">Edit</button>
         </mat-action-row>
 
     </mat-expansion-panel>

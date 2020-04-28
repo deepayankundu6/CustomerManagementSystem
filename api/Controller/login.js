@@ -18,14 +18,12 @@ exports.verifyLogin = async (req, res) => {
     if (response) {
         if (query.Email == response.Email && query.Password == response.Password) {
             isValid = true;
-            if (response.IsAdmin) {
-                isadmin = true;
-            }
         }
     }
     res.send({
         "IsValid": isValid,
-        "IsAdmin": isadmin
+        "IsAdmin": response.IsAdmin,
+        "CanEdit": response.CanEdit
     });
 }
 
@@ -37,6 +35,7 @@ exports.createUser = async (req, res) => {
         "Email": user.Email
     }
     user.IsAdmin = false;
+    user.CanEdit = false;
     let response = await this.findOneDocument(query);
     if (response.length == 0) {
         response = await this.insertOneDocument(user);

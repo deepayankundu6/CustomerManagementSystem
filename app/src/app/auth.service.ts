@@ -6,6 +6,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 })
 export class AuthService implements CanActivate {
   valid;
+  CanEdit;
   constructor(private _router: Router) {
     this.valid = false;
   }
@@ -22,5 +23,8 @@ export class AuthService implements CanActivate {
   }
   logout() {
     this.valid = false;
+  }
+  enableEditing() {
+    this.CanEdit = true;
   }
 }

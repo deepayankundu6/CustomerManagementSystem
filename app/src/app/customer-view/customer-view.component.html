@@ -1,7 +1,7 @@
 <div class="container" style="
     position: absolute;">
     <input type="number" class="form-control" placeholder="Customer ID" [(ngModel)]="SearchCustomer">
-    <button routerLink='add' class="btn btn-primary button">Add
+    <button routerLink='add' class="btn btn-primary button" *ngIf="canEdit">Add
         Customer</button>
 </div>
 <br><br><br>
@@ -17,7 +17,7 @@
                             style="color: blue; margin-left: 0.1em; font-size: 0.8em;"></i></a>
                     <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png"
                         (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip"
-                        title="Delete Customer" />
+                        title="Delete Customer" *ngIf="canEdit" />
                 </mat-card-title>
                 <mat-card-subtitle routerLink='view/{{customer.CustomerID}}' class="title"> {{customer.CustomerID}}
                 </mat-card-subtitle>
