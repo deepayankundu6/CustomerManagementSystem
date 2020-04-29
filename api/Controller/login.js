@@ -155,7 +155,7 @@ exports.configureUsers = async () => {
         result = await db.collection("Users").find({}).toArray();
         if (!result.length >> 0) {
             console.log("creating user in database:");
-            result = await db.collection("Users").inserOne(user);
+            result = await db.collection("Users").insertOne(user);
             console.log("Finished Creating User");
         }
 
