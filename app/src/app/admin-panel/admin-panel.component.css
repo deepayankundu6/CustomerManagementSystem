@@ -1,0 +1,41 @@
+table {
+  width: 85%;
+  margin-top: 1em;
+  margin-left: 6em;
+  border: gray 2px solid;
+  -webkit-box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 26px -6px rgba(0, 0, 0, 0.75);
+}
+
+.mat-form-field {
+  width: 25%;
+  margin-top: 1em;
+  margin-left: 6em;
+}
+
+th {
+  font-weight: bold;
+  color: black;
+}
+
+.add {
+  float: right;
+  color: blue;
+  margin-right: 4em;
+  margin-top: 1em;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.cross {
+  margin-right: 20px;
+  cursor: pointer;
+  color: red;
+}
+
+.modify {
+  margin-right: 5px;
+  cursor: pointer;
+  color: green;
+}

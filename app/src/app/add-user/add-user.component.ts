@@ -5,23 +5,24 @@ import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from "ngx-spinner";
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
-import { LandingPageComponent } from '../landing-page/landing-page.component';
+import { AdminPanelComponent } from '../admin-panel/admin-panel.component';
 
 @Component({
-  selector: 'app-signup-component',
-  templateUrl: './signup-component.component.html',
-  styleUrls: ['./signup-component.component.css']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.css']
 })
-export class SignupComponentComponent implements OnInit {
+export class AddUserComponent implements OnInit {
   userDetails: FormGroup;
   resopnseData;
+  values: string[] = ['IsAdmin', 'CanEdit', 'ViewOnly'];
+  //isFormValid = (this.userDetails.valid && this.Priviledges.length > 0)
 
   constructor(private http: HttpClient,
     private toastr: ToastrService,
     private spinner: NgxSpinnerService,
     private router: Router,
-    private dialogRef: MatDialogRef<LandingPageComponent>
-  ) { }
+    private dialogRef: MatDialogRef<AdminPanelComponent>) { }
 
   ngOnInit(): void {
     this.userDetails = new FormGroup({
@@ -32,15 +33,26 @@ export class SignupComponentComponent implements OnInit {
       DOB: new FormControl('', [Validators.required,
       Validators.minLength(1)]),
       Name: new FormControl('', [Validators.required,
+      Validators.minLength(1)]),
+      Priviledges: new FormControl("", [Validators.required,
       Validators.minLength(1)])
     });
   }
-
   createUser() {
     this.spinner.show();
     let user = this.userDetails.value;
-    user.IsAdmin = false;
-    user.CanEdit = false;
+    if (user.Priviledges == "CanEdit") {
+      user.CanEdit = true;
+      user.IsAdmin = false;
+    }
+    else if (user.Priviledges == "IsAdmin") {
+      user.CanEdit = false;
+      user.IsAdmin = true;
+    }
+    else {
+      user.CanEdit = false;
+      user.IsAdmin = false;
+    }
     this.http.post("api/user/create", user).subscribe((data: { data }) => {
       this.resopnseData = data;
       if (this.resopnseData.Status == "SUCCESS") {
@@ -56,4 +68,5 @@ export class SignupComponentComponent implements OnInit {
   backClick() {
     this.dialogRef.close();
   }
+
 }

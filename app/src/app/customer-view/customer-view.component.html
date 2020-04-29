@@ -11,7 +11,7 @@
             <mat-card class="card" *ngFor="let customer of customers | cidFilter : SearchCustomer">
                 <mat-card-title class="title">
                     {{customer.FirstName +' '+ customer.LastName}}
-                    <a href="mailto:{{customer.Email}}"><i class="fas fa-envelope"
+                    <a href="mailto:{{customer.Email}}"><i class="fas fa-envelope" *ngIf="canEdit"
                             style="color: blue; margin-left: 0.1em; font-size: 0.8em;"></i></a>
                     <img class="trash" src="https://img.icons8.com/carbon-copy/100/000000/full-trash.png"
                         (click)="openCnfDialogue(customer.CustomerID)" width="25" height="25" data-toggle="tooltip"

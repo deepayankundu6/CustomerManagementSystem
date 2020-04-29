@@ -1,0 +1,39 @@
+<div class="input-group">
+    <form [formGroup]="userDetails" class="form">
+        <br>
+        <div class="input-group-prepend"> <label> Name: <input type="text" class="form-control" style="min-width: 17em;"
+                    formControlName="Name"></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> Email ID: <input type="email" class="form-control"
+                    style="min-width: 17em;" formControlName="Email"></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> Password: <input type="password" class="form-control"
+                    style="min-width: 17em;" formControlName="Password"></label>
+        </div>
+        <br>
+        <div class="input-group-prepend"> <label> Date of Birth: <input type="date" class="form-control"
+                    style="min-width: 17em;" formControlName="DOB"></label>
+        </div>
+        <div class="input-group-prepend">
+            <label>
+                <label>Select User Priviledges:</label>
+                <br>
+                <mat-radio-group formControlName="Priviledges">
+                    <mat-radio-button *ngFor="let value of values" style="margin-right: 15px;" [value]="value">
+                        {{value}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </label>
+        </div>
+        <br>
+        <p>
+            <button class="btn btn-info" style="margin-right: 4%;  min-width: 8em;" (click)="backClick()"> Back
+            </button>
+            <button class="btn btn-success" [disabled]="!userDetails.valid" style=" min-width: 8em;"
+                (click)="createUser()">Add
+            </button>
+        </p>
+    </form>
+</div>

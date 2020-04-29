@@ -11,7 +11,7 @@ import { PagetitleComponent } from './pagetitle/pagetitle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { CidFilterPipe } from './cid-filter.pipe';
 import { CnfDialogBoxComponent } from './cnf-dialog-box/cnf-dialog-box.component';
@@ -27,6 +27,13 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { SignupComponentComponent } from './signup-component/signup-component.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import { AddUserComponent } from './add-user/add-user.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { EditUserComponent } from './edit-user/edit-user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +49,9 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     LoginComponentComponent,
     SignupComponentComponent,
     AdminLoginComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +68,11 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     MatPaginatorModule,
     MatTabsModule,
     MatStepperModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule,
+    MatInputModule,
+    MatSortModule,
+    MatRadioModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
