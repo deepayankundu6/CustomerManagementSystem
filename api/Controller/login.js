@@ -59,8 +59,7 @@ exports.deleteUser = async (req, res) => {
     console.log("Inside deleteUser");
     let details = req.body;
     query = {
-        "Email": details.email,
-        "Password": details.password,
+        "Email": details.Email
     };
     let response = await this.deleteOneDocument(query);
     res.send(response);
@@ -68,8 +67,8 @@ exports.deleteUser = async (req, res) => {
 
 exports.fetchAllUsers = async (req, res) => {
     console.log("Inside deleteUser");
-
     let response = await this.findDocuments();
+    response.forEach(el => delete el._id);
     res.send(response);
 }
 
@@ -78,8 +77,7 @@ exports.modifyUser = async (req, res) => {
     console.log("Inside modifyUser");
     let details = req.body;
     query = {
-        "Email": details.email,
-        "Password": details.password,
+        "Email": details.Email
     };
     delete details.CustomerID
     let response = await this.updateOneDocument(query, details);

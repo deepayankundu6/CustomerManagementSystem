@@ -61,8 +61,10 @@ router.get('/customer/getall', customers.fetchAllCustomer);
 router.post('/customer/get', customers.fetchCustomer);
 router.post('/customer/update', customers.modifyCustomer);
 router.post('/customer/delete', customers.deleteCustomer);
+
 router.get('/states/getdistrict/:state', states.getDistrict);
 router.get('/states/getstates', states.getStates);
+
 router.post('/user/verify', users.verifyLogin);
 router.post('/user/create', users.createUser);
 router.post('/user/remove', users.deleteUser);
