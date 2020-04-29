@@ -38,6 +38,7 @@ export class CustomerViewComponent implements OnInit {
   }
 
   getCustomers() {
+    this.spinner.show()
     this.http.get("/api/customer/getall").subscribe((customers: ICustomers[]) => {
       if (customers) {
         this.customers = customers;
@@ -47,6 +48,7 @@ export class CustomerViewComponent implements OnInit {
     }, (error) => {
       console.error(error);
     });
+    this.spinner.hide();
   }
 
   openCnfDialogue(cid): void {
