@@ -67,6 +67,7 @@ router.post('/user/verify', users.verifyLogin);
 router.post('/user/create', users.createUser);
 router.post('/user/remove', users.deleteUser);
 router.post('/user/modify', users.modifyUser);
+router.get('/user/getall', users.fetchAllUsers);
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)

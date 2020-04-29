@@ -62,19 +62,27 @@ exports.deleteUser = async (req, res) => {
         "Email": details.email,
         "Password": details.password,
     };
-    let response = await MongoDB.deleteOneDocument(query);
+    let response = await this.deleteOneDocument(query);
     res.send(response);
 }
 
+exports.fetchAllUsers = async (req, res) => {
+    console.log("Inside deleteUser");
+
+    let response = await this.findDocuments();
+    res.send(response);
+}
+
+
 exports.modifyUser = async (req, res) => {
-    console.log("Inside modifyCustmodifyUseromer");
+    console.log("Inside modifyUser");
     let details = req.body;
     query = {
         "Email": details.email,
         "Password": details.password,
     };
     delete details.CustomerID
-    let response = await MongoDB.updateOneDocument(query, details);
+    let response = await this.updateOneDocument(query, details);
     res.send(response);
 }
 
@@ -153,6 +161,55 @@ exports.configureUsers = async () => {
             console.log("Finished Creating User");
         }
 
+    } catch (err) { console.error(err); } // catch any mongo error here
+    finally { client.close(); } // make sure to close your connection after
+
+    return result;
+}
+
+exports.updateOneDocument = async (query, newValues) => {
+    let result;
+    let client;
+    let values = { $set: newValues }
+    try {
+        client = await MongoClient.connect(url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
+        db = client.db(DatabaseName);
+        result = await db.collection(CollectionName).updateOne(query, values);
+    } catch (err) { console.error(err); } // catch any mongo error here
+    finally { client.close(); } // make sure to close your connection after
+
+    return result;
+}
+
+exports.deleteOneDocument = async (query) => {
+    let result;
+    let client;
+    try {
+        client = await MongoClient.connect(url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
+        db = client.db(DatabaseName);
+        result = await db.collection(CollectionName).deleteOne(query);
+    } catch (err) { console.error(err); } // catch any mongo error here
+    finally { client.close(); } // make sure to close your connection after
+
+    return result;
+}
+
+exports.findDocuments = async () => {
+    let result;
+    let client;
+    try {
+        client = await MongoClient.connect(url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
+        db = client.db(DatabaseName);
+        result = await db.collection(CollectionName).find({}).toArray();
     } catch (err) { console.error(err); } // catch any mongo error here
     finally { client.close(); } // make sure to close your connection after
 

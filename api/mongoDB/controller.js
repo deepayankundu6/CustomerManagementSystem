@@ -159,7 +159,6 @@ exports.configureStates = async () => {
 }
 
 exports.initializeDatabase = async () => {
-    await this.createDatabase();
     await this.configureStates();
-    await users.createDatabase();
+    await users.configureUsers();
 }
