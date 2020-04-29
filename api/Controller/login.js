@@ -37,8 +37,6 @@ exports.createUser = async (req, res) => {
     query = {
         "Email": user.Email
     }
-    user.IsAdmin = false;
-    user.CanEdit = false;
     let response = await this.findOneDocument(query);
     if (response.length == 0) {
         response = await this.insertOneDocument(user);
@@ -55,6 +53,29 @@ exports.createUser = async (req, res) => {
     }
 
     res.send(finalResponse);
+}
+
+exports.deleteUser = async (req, res) => {
+    console.log("Inside deleteUser");
+    let details = req.body;
+    query = {
+        "Email": details.email,
+        "Password": details.password,
+    };
+    let response = await MongoDB.deleteOneDocument(query);
+    res.send(response);
+}
+
+exports.modifyUser = async (req, res) => {
+    console.log("Inside modifyCustmodifyUseromer");
+    let details = req.body;
+    query = {
+        "Email": details.email,
+        "Password": details.password,
+    };
+    delete details.CustomerID
+    let response = await MongoDB.updateOneDocument(query, details);
+    res.send(response);
 }
 
 exports.findOneDocument = async (query) => {
@@ -106,4 +127,34 @@ exports.createDatabase = () => {
         })
         reject(console.log("Unable to connect to the database!!!!"))
     });
+}
+
+exports.configureUsers = async () => {
+    let result;
+    let client;
+    let user = {
+        "Email": "admin@user",
+        "Password": "123456",
+        "DOB": "2020-04-27",
+        "Name": "Admin",
+        "IsAdmin": true,
+        "CanEdit": true
+    }
+    try {
+        client = await MongoClient.connect(url, {
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
+        db = client.db(DatabaseName);
+        result = await db.collection("Users").find({}).toArray();
+        if (!result.length >> 0) {
+            console.log("creating user in database:");
+            result = await db.collection("Users").inserOne(user);
+            console.log("Finished Creating User");
+        }
+
+    } catch (err) { console.error(err); } // catch any mongo error here
+    finally { client.close(); } // make sure to close your connection after
+
+    return result;
 }

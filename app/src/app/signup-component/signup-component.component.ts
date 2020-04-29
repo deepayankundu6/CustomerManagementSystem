@@ -35,9 +35,11 @@ export class SignupComponentComponent implements OnInit {
     });
   }
   createUser() {
-    console.log(this.userDetails.value);
     this.spinner.show();
-    this.http.post("api/user/create", this.userDetails.value).subscribe((data: { data }) => {
+    let user = this.userDetails.value;
+    user.IsAdmin = false;
+    user.CanEdit = false;
+    this.http.post("api/user/create", user).subscribe((data: { data }) => {
       this.resopnseData = data;
       if (this.resopnseData.Status == "SUCCESS") {
         this.toastr.success("Success", "User added successfully");

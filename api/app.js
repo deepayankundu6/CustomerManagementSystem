@@ -65,9 +65,8 @@ router.get('/states/getdistrict/:state', states.getDistrict);
 router.get('/states/getstates', states.getStates);
 router.post('/user/verify', users.verifyLogin);
 router.post('/user/create', users.createUser);
-
-
-
+router.post('/user/remove', users.deleteUser);
+router.post('/user/modify', users.modifyUser);
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
