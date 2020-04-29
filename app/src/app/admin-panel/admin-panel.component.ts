@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { AddUserComponent } from '../add-user/add-user.component';
+import { EditUserComponent } from '../edit-user/edit-user.component';
 
 @Component({
   selector: 'app-admin-panel',
@@ -77,5 +78,18 @@ export class AdminPanelComponent implements OnInit {
       this.toastr.error("Failure", "Failed toremove user");
     });
   }
+
+  OpenEditUser(user) {
+    let dialogRef = this.dialog.open(EditUserComponent,
+      {
+        "height": "40em",
+        "width": "40em",
+        data: user
+      });
+    dialogRef.afterClosed().subscribe(() => {
+      this.getAllUsers();
+    });
+  }
+
 }
 

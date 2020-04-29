@@ -37,7 +37,7 @@
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
             <td mat-cell *matCellDef="let element">
                 <i class="far fa-times-circle cross" (click)="onDeleteClick(element)"></i>
-                <i class="fas fa-edit modify"></i>
+                <i class="fas fa-edit modify" (click)="OpenEditUser(element)"></i>
             </td>
         </ng-container>
 

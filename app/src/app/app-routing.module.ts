@@ -12,7 +12,7 @@ import { AdminCheckService } from './admin-check.service';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'admin', component: AdminPanelComponent, canActivate: [AdminCheckService] },
+  { path: 'admin', component: AdminPanelComponent },
   { path: 'cms', component: CustomerViewComponent, canActivate: [AuthService] },
   { path: 'cms/add', component: AddCustomerComponent, canActivate: [AuthService] },
   { path: 'cms/view/:id', component: CustomerDetailsComponent, canActivate: [AuthService] },
