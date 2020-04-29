@@ -16,7 +16,6 @@ export class AddUserComponent implements OnInit {
   userDetails: FormGroup;
   resopnseData;
   values: string[] = ['IsAdmin', 'CanEdit', 'ViewOnly'];
-  //isFormValid = (this.userDetails.valid && this.Priviledges.length > 0)
 
   constructor(private http: HttpClient,
     private toastr: ToastrService,
@@ -46,23 +45,25 @@ export class AddUserComponent implements OnInit {
       user.IsAdmin = false;
     }
     else if (user.Priviledges == "IsAdmin") {
-      user.CanEdit = false;
+      user.CanEdit = true;
       user.IsAdmin = true;
     }
     else {
       user.CanEdit = false;
       user.IsAdmin = false;
     }
+    delete user.Priviledges;
     this.http.post("api/user/create", user).subscribe((data: { data }) => {
       this.resopnseData = data;
       if (this.resopnseData.Status == "SUCCESS") {
         this.toastr.success("Success", "User added successfully");
         this.dialogRef.close();
+        this.spinner.hide();
       }
       else {
         this.toastr.error("Failure", "Failed to add user please try again");
+        this.spinner.hide();
       }
-      this.spinner.hide();
     });
   }
   backClick() {

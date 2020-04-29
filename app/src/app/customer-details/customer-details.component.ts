@@ -30,6 +30,7 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   getCustomer() {
+    this.spinner.show();
     let payload = {
       "CustomerID": this.customerID
     }
@@ -39,8 +40,10 @@ export class CustomerDetailsComponent implements OnInit {
       } else {
         console.log("No data received");
       }
+      this.spinner.hide();
     }, (error) => {
       console.error(error);
+      this.spinner.hide();
     });
   }
 

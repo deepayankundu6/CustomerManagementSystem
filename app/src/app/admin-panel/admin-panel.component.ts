@@ -38,13 +38,14 @@ export class AdminPanelComponent implements OnInit {
       if (users) {
         this.data = users;
         this.UsersData = new MatTableDataSource(this.data);
+        this.spinner.hide();
       } else {
         console.log("No data received");
+        this.spinner.hide();
       }
     }, (error) => {
       console.error(error);
     });
-    this.spinner.hide();
   }
 
   applyFilter(event: Event) {

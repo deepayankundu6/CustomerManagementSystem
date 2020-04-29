@@ -76,7 +76,6 @@ export class EditcustomerdetailsComponent implements OnInit {
       "CustomerID": this.customer.CustomerID
     }
     this.saveDetails(payload);
-    this.spinner.hide();
 
     this.dialogRef.close();
   }
@@ -95,9 +94,11 @@ export class EditcustomerdetailsComponent implements OnInit {
   saveDetails(payload) {
     this.http.post("api/customer/update", payload).subscribe((data) => {
       this.toastr.success("Success", "Customer updated successfully");
+      this.spinner.hide();
     }, (error) => {
       this.toastr.error("Failure", "Failed to update customer");
       console.error(error)
+      this.spinner.hide();
     });
   }
 }

@@ -46,11 +46,12 @@ export class SignupComponentComponent implements OnInit {
       if (this.resopnseData.Status == "SUCCESS") {
         this.toastr.success("Success", "User added successfully");
         this.dialogRef.close();
+        this.spinner.hide();
       }
       else {
         this.toastr.error("Failure", "Failed to add user please try again");
+        this.spinner.hide();
       }
-      this.spinner.hide();
     });
   }
   backClick() {

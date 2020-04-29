@@ -45,10 +45,11 @@ export class CustomerViewComponent implements OnInit {
       } else {
         console.log("No data received");
       }
+      this.spinner.hide();
     }, (error) => {
       console.error(error);
+      this.spinner.hide();
     });
-    this.spinner.hide();
   }
 
   openCnfDialogue(cid): void {
