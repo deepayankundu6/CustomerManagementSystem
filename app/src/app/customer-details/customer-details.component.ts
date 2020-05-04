@@ -59,6 +59,7 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   onPinClick(comment) {
+    this.spinner.show();
     this.customer.Comments.forEach(cmt => {
       if (cmt.Message.includes(comment.Message)) {
         comment.Pinned = !comment.Pinned;
@@ -69,12 +70,15 @@ export class CustomerDetailsComponent implements OnInit {
     });
     this.http.post("api/customer/update", this.customer).subscribe(() => {
       this.getCustomer();
+      this.spinner.hide();
     }, (error) => {
-      console.error(error)
+      console.error(error);
+      this.spinner.hide();
     });
   }
 
   onDeleteClick(comment) {
+    this.spinner.show();
     let index = -1;
     this.customer.Comments.forEach((cmt, i) => {
       if (cmt.Message.includes(comment.Message)) {
@@ -87,9 +91,11 @@ export class CustomerDetailsComponent implements OnInit {
     this.http.post("api/customer/update", this.customer).subscribe(() => {
       this.getCustomer();
       this.toastr.success("Success", "Comment deleted successfully");
+      this.spinner.hide();
     }, (error) => {
       this.toastr.error("Failure", "Failed to delete Cooment");
-      console.error(error)
+      console.error(error);
+      this.spinner.hide();
     });
   }
   getMessage(PinStatus) {

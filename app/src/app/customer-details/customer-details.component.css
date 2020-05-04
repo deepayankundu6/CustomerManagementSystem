@@ -6,13 +6,13 @@
 
 .unpin {
   margin-left: 1em;
-  color: greenyellow;
+  color: blue;
   cursor: pointer;
 }
 
 .pinned {
   margin-left: 1em;
-  color: greenyellow;
+  color: blue;
   cursor: pointer;
   transform: rotate(30deg);
 }
