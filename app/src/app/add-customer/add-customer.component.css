@@ -10,3 +10,8 @@ select {
 textarea {
   min-width: 16em;
 }
+
+.back {
+  margin-right: 23%;
+  min-width: 4em;
+}
