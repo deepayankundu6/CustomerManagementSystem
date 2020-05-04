@@ -61,7 +61,7 @@ export class CustomerDetailsComponent implements OnInit {
   onPinClick(comment) {
     this.spinner.show();
     this.customer.Comments.forEach(cmt => {
-      if (cmt.Message.includes(comment.Message)) {
+      if (cmt.Message == comment.Message) {
         comment.Pinned = !comment.Pinned;
         cmt = comment;
       } else {
@@ -81,7 +81,7 @@ export class CustomerDetailsComponent implements OnInit {
     this.spinner.show();
     let index = -1;
     this.customer.Comments.forEach((cmt, i) => {
-      if (cmt.Message.includes(comment.Message)) {
+      if (cmt.Message == comment.Message) {
         index = i;
       }
     });

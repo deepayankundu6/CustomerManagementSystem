@@ -10,7 +10,7 @@ export class CidFilterPipe implements PipeTransform {
     if (values && filter && values.length > 0 && filter > 0) {
 
       values = values.filter((el: ICustomers) => {
-        if (el.CustomerID.toString().includes(filter.toString()))
+        if (el.CustomerID.toString() == filter.toString())
           return values;
       }
       )
