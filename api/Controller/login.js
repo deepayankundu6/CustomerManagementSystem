@@ -66,7 +66,7 @@ exports.deleteUser = async (req, res) => {
 }
 
 exports.fetchAllUsers = async (req, res) => {
-    console.log("Inside deleteUser");
+    console.log("Inside fetchAllUsers");
     let response = await this.findDocuments();
     response.forEach(el => delete el._id);
     res.send(response);
