@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
-//var url = "mongodb://localhost:27017/MyDB";
-var url = "mongodb://Deepayan:123456@127.0.0.1:27017/MyDB";
+var url = "mongodb://localhost:27017";
+//var url = "mongodb://Deepayan:123456@127.0.0.1";
 var DatabaseName = "MyDB";
 var CollectionName = "Customers"
 var states = require('./../States_List').statesList;
@@ -14,10 +14,13 @@ exports.createDatabase = () => {
             useUnifiedTopology: true,
             useNewUrlParser: true
         })).then((db => {
+            db.client.db(DatabaseName);
+        })).then((db) => {
             db.createCollection(CollectionName);
+            db.close();
             console.log("Connection established")
             db.close();
-        })).catch((err) => {
+        }).catch((err) => {
             console.log("There are some errors:", err);
         })
         reject(console.log("Unable to connect to the database!!!!"))

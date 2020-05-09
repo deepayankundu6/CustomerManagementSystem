@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
-//var url = "mongodb://localhost:27017/MyDB";
-var url = "mongodb://Deepayan:123456@127.0.0.1:27017/MyDB";
+var url = "mongodb://localhost:27017";
+//var url = "mongodb://Deepayan:123456@127.0.0.1";
 var DatabaseName = "MyDB";
 var CollectionName = "States"
 
@@ -66,9 +66,12 @@ createDatabase = () => {
             useUnifiedTopology: true,
             useNewUrlParser: true
         })).then((db => {
-            dbo.createCollection(CollectionName);
+            db.db(DatabaseName);
+
+        })).then((db) => {
+            db.createCollection(CollectionName);
             db.close();
-        })).catch((err) => {
+        }).catch((err) => {
             console.log("There are some errors:", err);
         })
         reject(console.log("Unable to connect to the database!!!!"))
