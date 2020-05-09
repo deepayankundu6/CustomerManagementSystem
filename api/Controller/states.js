@@ -13,8 +13,13 @@ exports.getDistrict = async (req, res) => {
     }
     let response = await findOneDocument(query);
 
-    res.send(response[0].districts);
-}
+    if(response[0].districts{
+         res.send(response[0].districts);
+    }
+    else{
+          res.send("Please check the name no state found with thisname!!")
+      }
+    }
 
 exports.getStates = async (req, res) => {
     console.log("Inside getStates");
