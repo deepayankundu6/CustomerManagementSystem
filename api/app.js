@@ -2,7 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 const staticMiddleware = express.static("dist");
-const PORT = 3000;
+const PORT = 5000;
 const bodyParser = require('body-parser');
 const config = require('./webpack.config.js');
 const webpack = require('webpack');
@@ -24,7 +24,7 @@ app.use(staticMiddleware);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', router);
 
-var mongoDB = require('../api/mongoDB/controller');
+var mongoDB = require('./mongoDB/controller');
 var customers = require('./Controller/customers');
 var states = require('./Controller/states');
 var users = require('./Controller/login');
