@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "ec2-15-206-189-185.ap-south-1.compute.amazonaws.com",
+    "target": "localhost:3000/api",
     "secure": false,
     "logLevel": "debug"
   }
