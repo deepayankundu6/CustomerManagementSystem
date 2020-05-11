@@ -1,6 +1,6 @@
 ## Customer Management System
 
-This project is made to ease the management of customer records in an organization.
+This project is made to ease the management of customer records of an organization.
 
 ## Software stack:
 1) Database : MongoDB
