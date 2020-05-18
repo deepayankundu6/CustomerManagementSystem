@@ -4,11 +4,11 @@ const nodeExternals = require('webpack-node-externals');
 module.exports = {
     mode: 'development',
     entry: {
-        'Controller/customers': path.resolve(__dirname, './Controller/customers.js'),
-        'Controller/login': path.resolve(__dirname, './Controller/login.js'),
-        'Controller/states': path.resolve(__dirname, './Controller/states.js'),
-        'mongoDB/controller': path.resolve(__dirname, './mongoDB/controller.js'),
-        './api': path.resolve(__dirname, './app.js'),
+        'Controller/customers': path.resolve('./Controller/customers.js'),
+        'Controller/login': path.resolve('./Controller/login.js'),
+        'Controller/states': path.resolve('./Controller/states.js'),
+        'mongoDB/controller': path.resolve('./mongoDB/controller.js'),
+        './app': path.resolve('./app.js'),
     },
     target: 'node',
     externals: [nodeExternals()],
