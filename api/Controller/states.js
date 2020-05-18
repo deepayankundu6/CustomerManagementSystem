@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
-//var url = "mongodb://localhost:27017";
-var url = "mongodb://DeepayanKundu:123456@localhost:27017/MyDB";
+var url = "mongodb://localhost:27017";
+//var url = "mongodb://DeepayanKundu:123456@localhost:27017/MyDB";
 var DatabaseName = "MyDB";
 var CollectionName = "States"
 
