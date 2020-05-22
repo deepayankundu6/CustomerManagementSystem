@@ -51,14 +51,12 @@
       border-radius: 1em;
       border: 0 solid skyblue;
       transition: transform .5s;
-      padding-bottom: 2.5em;
       margin-bottom: 1em;
       padding-bottom: 3em;
     }
 
     .card:hover {
       font-weight: bold;
-      padding-bottom: 2.5em;
       padding-bottom: 3em;
       background-color: white;
       border-radius: 1em;

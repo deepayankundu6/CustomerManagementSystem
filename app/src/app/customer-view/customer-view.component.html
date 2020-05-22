@@ -27,17 +27,21 @@
                         Gender: {{customer.Gender}}
                     </div>
                 </mat-card-content>
-                <br>
                 <mat-card-footer>
-                    <div style="margin-bottom: -2.5em;"><span class=" esclations"><i class="fas fa-thumbs-down"></i>
-                            {{customer.Escalation}}</span>
-                        <span *ngFor="let Comment of customer.Comments">
-                            <span *ngIf="Comment.Pinned"
-                                style="margin-left: 28em; color: blue;">{{Comment.Message}}</span>
+                    <br>
+                    <div>
+                        <span class=" esclations"><i class="fas fa-thumbs-down"></i>
+                            {{customer.Escalation}}
                         </span>
-                        <span class=" appretiaitons"><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}}</span>
+                        <span class=" appretiaitons"><i class="fas fa-thumbs-up"></i> {{customer.Appreciations}}
+                        </span>
+                        <span>
+                            <span *ngFor="let Comment of customer.Comments">
+                                <span *ngIf="Comment.Pinned" style="margin-left: 28em; color: blue;">{{Comment.Message}}
+                                </span>
+                            </span>
+                        </span>
                     </div>
-
                 </mat-card-footer>
             </mat-card>
         </div>
