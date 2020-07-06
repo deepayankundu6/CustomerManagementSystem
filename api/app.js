@@ -1,16 +1,8 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-const staticMiddleware = express.static("dist");
 const PORT = 5000;
 const bodyParser = require('body-parser');
-const config = require('./webpack.config.js');
-const webpack = require('webpack');
-const compiler = webpack(config);
-const webpackDevMiddleware = require('webpack-dev-middleware')(
-    compiler,
-    config.devServer
-)
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,9 +10,7 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
-app.set('view engine', 'jade');
-app.use(webpackDevMiddleware);
-app.use(staticMiddleware);
+// app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', router);
 
